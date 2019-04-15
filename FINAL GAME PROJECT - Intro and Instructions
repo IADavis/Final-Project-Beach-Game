@@ -1,0 +1,58 @@
+FINAL GAME PROJECT
+
+Over the course of the next weeks, you will be working to complete an original game. This game should take everything that you learned in throughout, but also extend to new ideas you come up with. Be creative!
+
+Expectations
+
+The goal of this project isn't to set expectations on what is to be built. The difficulty, actions, and genre of the game are 100% up to you. Throughout the process though there will be required steps to complete. During game development you will follow this outline with the end goal of having a completed game to present. 
+
+Outline
+
+•	Begin to build your game (We will do this is chunks as part of our weekly assignments/HOL. Think of this as progress updates)
+•	Pitch and evaluate the game to your peers, and utilize the peer review process. 
+•	Create a video of you playing your game, and explaining the code
+•	Submit your game
+
+Overall Outline Details
+
+Take the time to think about what type of game you want to build, reference older materials for ideas of different genres of potential games. Taking the time to think of an original game can be frustrating, but once you come up with the original idea it will all be worth it. Try to be creative, simply taking a game you have already built and adding features doesn't scream creativity. Keep in mind though that you're working on limited time. 
+
+Trying to build a massive game most likely won’t be manageable, so make sure that the game you are trying to create will be feasible.
+
+The bulk of the time spent will be in building the game. Use previous games built as a crutch or guide in implementing best practices. There is no penalty in testing, so try to invent new ways of accomplishing the goals of the game. In the end, the game should be well documented and should function properly (error free).  About halfway through, we will delve into a peer review process that will allow us to make improvements to our game.
+
+There will be numerous times in the game that you will get frustrated. Welcome to game development. The point is to remember areas where you struggled and correct them next time they come up. 
+
+You will be required to share your game with the classroom. Again, keep in mind the key to a successful presentation isn't just in presenting, but relies heavily on
+your game. An original idea coupled with a good game will practically take care of the presentation for you. Beyond the idea and game though there are a few other requirements for the presentation. 
+
+
+What Will Be Turned In:
+
+Below is a tentative timeline on what should be turned in:
+-	Peer Review
+-	The game itself and Presentation
+How Will We Be Graded?:
+The whole team will be graded on the following:
+-	Game and Presentation: Final - 200 points
+-	Other items will be grades as part of the weekly grades
+Game Requirements:
+The following are the MININUM requirements for your game.  When I mean MINIMUM I am talking about a C level project.  If you wish to make above this, I suggest you are creative, go above what is required.  A rubric will be provided after the design process is over:
+ALL games will have:
+-	MUST be created utilizing python
+-	Must be a 2D game
+-	Must have at least 2-3 levels 
+-Must contain a story (Remember to tell a story with game elements..you do not necessarily need text…I will give an example of this in class)
+-	Must have an objective
+-	Must have sound 
+-	Must have interaction with objects or sprites
+Additional Game Requirements:
+-	Main character must be an animated/movable sprite
+-	Have AT LEAST 3-5 other character/enemy/object sprites with animations
+-	All sprites must be original
+-	Have AT LEAST 4-7 environmental objects to interact with (do not necessarily have to be animated)
+-	Must have a title screen
+-	You must have interactivity / collision programming with at least 2 of the other sprites and 2 environment objects with your main character
+
+
+
