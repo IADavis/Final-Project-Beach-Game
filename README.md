@@ -1,6 +1,7 @@
 # Final-Project-Beach-Game
 Final project for Andrew, Parker, and Isaac
 
+Isaac: idavis38@ivytech.edu
 Andy: aeolsonmoyano@gmail.com
 Andy: 317 508 8627
 
