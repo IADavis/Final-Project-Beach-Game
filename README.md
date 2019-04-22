@@ -30,6 +30,7 @@ Sounds
 Interactions
     Maze
     Character
+
 Story
   Hero goes to beach
   gets beat up by bully: sand kicked in face, sand castle kicked over
