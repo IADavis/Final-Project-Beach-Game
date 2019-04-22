@@ -4,6 +4,7 @@ Final project for Andrew, Parker, and Isaac
 Isaac: idavis38@ivytech.edu
 Andy: aeolsonmoyano@gmail.com
 Andy: 317 508 8627
+Parker: spongeboom2@gmail.com
 
 
 Characters
