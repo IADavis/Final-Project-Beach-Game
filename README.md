@@ -11,9 +11,9 @@ https://www.mapeditor.org/
 
 Characters
   Boss
-  Minion
+  Minion - Andy
   Girl
-  Hero
+  Hero  - Parker
 Scenery
   Title screen
   Beach
