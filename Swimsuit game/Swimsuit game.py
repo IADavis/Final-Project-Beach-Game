@@ -15,6 +15,7 @@ class MyGame(arcade.Window):
         #Lists
         self.player_list = None
         self.background = None
+        self.wallList = None
 
         #Sptite of player
         self.player_sprite = None
@@ -24,7 +25,7 @@ class MyGame(arcade.Window):
 
         #Background
         arcade.set_background_color(arcade.color.AMAZON)
-        self.background = arcade.load_texture("Beach background.png")
+        self.background = arcade.load_texture("Beach background.png")        
 
     def setup(self):
         #sets up game and initialzes
@@ -36,11 +37,19 @@ class MyGame(arcade.Window):
         self.player_sprite.center_y = 150
         self.player_list.append(self.player_sprite)
 
+        #Added in a new wall object
+        self.wallList = arcade.SpriteList()
+        wall = arcade.Sprite("TestWall.png",1)
+        wall.center_y = 32
+        wall.center_x = 60
+        self.wallList.append(wall)
+
     def on_draw(self):
         arcade.start_render()
         arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
                                       SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
         self.player_list.draw()
+        self.wallList.draw()
 
     def update(self, delta_time):
         self.player_list.update()
@@ -61,7 +70,7 @@ class MyGame(arcade.Window):
 
 def main():
     """ Main method """
-    window = MyGame()
+    window = MyGame(SCREEN_WIDTH,SCREEN_HEIGHT,"SwimsuitGame")
     window.setup()
     arcade.run()
 
