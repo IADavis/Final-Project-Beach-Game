@@ -6,9 +6,10 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 MOVEMENT_SPEED = 3
 
+
 class MyGame(arcade.Window):
 
-    def __init__(self, width, height, title):
+    def __init__(self):
         
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, " ")
 
