@@ -9,29 +9,29 @@ Parker: spongeboom2@gmail.com
 Tiled Editor
 https://www.mapeditor.org/
 
-Characters
-  Boss
-  Minion - Andy
-  Girl
-  Hero  - Parker
-Scenery
-  Title screen
-  Beach
-  Sand Castle
-Sounds
-    Hits
+## Characters
+-Boss
+-Minion - Andy
+-Girl
+-Hero  - Parker
+## Scenery
+-Title screen
+-Beach
+-Sand Castle
+## Sounds
+### Hits
         Shooting
         Throwing
         hitting
-    Music
+###Music
         Fight
         Journey
         Intro
-Interactions
+## Interactions
     Maze
     Character
 
-Story
+## Story
   Hero goes to beach
   gets beat up by bully: sand kicked in face, sand castle kicked over
   bully steals girl
