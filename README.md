@@ -10,16 +10,17 @@ Parker: spongeboom2@gmail.com
 Tiled Editor
 https://www.mapeditor.org/
 
-## Characters
+## Project Outline
+### Characters
    - Boss
    - Minion - Andy
    - Girl
    - Hero  - Parker
-## Scenery
+### Scenery
    - Title screen
    - Beach
    - Sand Castle
-## Sounds
+### Sounds
    - Hits
      - Shooting
      - Throwing
@@ -28,17 +29,22 @@ https://www.mapeditor.org/
     Fight
     Journey
     Intro
-## Interactions
+### Interactions
     Maze
     Character
 
 ## Story
   Hero goes to beach
+  
   gets beat up by bully: sand kicked in face, sand castle kicked over
+  
   bully steals girl
+  
   hero pursues to get girl back
     has to do tasks?: workout to get strength, find objects for weapons, etc.
+  
   runs into bully's posse and defeat
+  
   castle maze?
   
 
