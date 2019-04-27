@@ -103,41 +103,42 @@ class MyGame(arcade.Window):
         texture = arcade.load_texture("images/backgrounds/craftpix/PNG/game_background_2/instructions_1.png")
         self.instructions.append(texture)
 
+        # Define starting level and maximum number of levels
+        self.level = 1
+        self.max_level = 3
+
     def setup(self):
         """ Set up the game here. Call this function to restart the game. """
 
         # Load the background image. Do this in the setup so we don't keep reloading it all the time.
         self.background = arcade.load_texture("images/backgrounds/craftpix/PNG/game_background_2/game_background_2.png")
         
-        # Used to keep track of our scrolling
-        self.view_bottom = 0
-        self.view_left = 0
-
         # Keep track of the score
         self.score = 0
 
-        #Sprite Lists
+        # Sprite Lists
         self.player_list = arcade.SpriteList()
         self.coin_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
 
-        #Setup player
+        # Setup player
         self.player_sprite = arcade.Sprite("images/player_1/Swimsuit Guy.png", SPRITE_SCALING_PLAYER)
         self.player_sprite.center_x = 60
         self.player_sprite.center_y = 150
         self.player_list.append(self.player_sprite)
 
-        # --- Load in a map from the tiled editor ---
-
-        # Name of map file to load
-        map_name = "map.tmx"
+        # Load the level
+        self.load_level(self.level)
+        
+    def load_level(self, level):
+        # Read in the tiled map lebel
+        my_map = arcade.read_tiled_map(f"level_{level}.tmx", TILE_SCALING)
+        
         # Name of the layer in the file that has our platforms/walls
         platforms_layer_name = 'Platforms'
+        
         # Name of the layer that has items for pick-up
         coins_layer_name = 'Coins'
-
-        # Read in the tiled map
-        my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
 
         # -- Walls
         # Grab the layer of items we can't move through
@@ -159,6 +160,10 @@ class MyGame(arcade.Window):
 
         # Create the 'physics engine'
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player_sprite, self.wall_list, GRAVITY)
+
+        # Used to keep track of our scrolling
+        self.view_bottom = 0
+        self.view_left = 0
 
     def draw_instructions_page(self, page_number):
         """
@@ -284,11 +289,18 @@ class MyGame(arcade.Window):
                 self.score += 1
 
 
-            # If we've collected all the coins, then move to a "GAME_OVER"
-            # state.
+            # If we've collected all the coins, then go to next level
             if len(self.coin_list) == 0:
-                self.current_state = GAME_OVER
-                self.set_mouse_visible(True)
+                if self.level <= self.max_level:
+                    self.level += 1
+                    self.load_level(self.level)
+                    self.player_sprite.change_x = 0
+                    self.player_sprite.change_y = 0
+                    self.player_sprite.center_x = 64
+                    self.player_sprite.center_y = 64
+                else:
+                    self.current_state = GAME_OVER
+                    self.set_mouse_visible(True)
                 
             # --- Manage Screen Scrolling ---
 
