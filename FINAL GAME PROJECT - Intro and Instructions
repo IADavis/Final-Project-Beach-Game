@@ -1,15 +1,15 @@
-FINAL GAME PROJECT
+# FINAL GAME PROJECT
 
 Over the course of the next weeks, you will be working to complete an original game. This game should take everything that
 you learned in throughout, but also extend to new ideas you come up with. Be creative!
 
-Expectations
+## Expectations
 
 The goal of this project isn't to set expectations on what is to be built. The difficulty, actions, and genre
 of the game are 100% up to you. Throughout the process though there will be required steps to complete. During 
 game development you will follow this outline with the end goal of having a completed game to present. 
 
-Outline
+## Outline
 
 •	Begin to build your game (We will do this is chunks as part of our weekly assignments/HOL. Think of this as
   progress updates
@@ -17,7 +17,7 @@ Outline
 •	Create a video of you playing your game, and explaining the code
 •	Submit your game
 
-Overall Outline Details
+## Overall Outline Details
 
 Take the time to think about what type of game you want to build, reference older materials for ideas of different
 genres of potential games. Taking the time to think of an original game can be frustrating, but once you come up with
@@ -41,19 +41,22 @@ take care of the presentation for you. Beyond the idea and game though there are
 presentation. 
 
 
-What Will Be Turned In:
+## What Will Be Turned In:
 
 Below is a tentative timeline on what should be turned in:
 -	Peer Review
 -	The game itself and Presentation
-How Will We Be Graded?:
+
+## How Will We Be Graded?:
 The whole team will be graded on the following:
 -	Game and Presentation: Final - 200 points
 -	Other items will be grades as part of the weekly grades
-Game Requirements:
+
+## Game Requirements:
   The following are the MININUM requirements for your game.  When I mean MINIMUM I am talking about a C level project.
   If you wish to make above this, I suggest you are creative, go above what is required.  A rubric will be provided
   after the design process is over:
+
 ALL games will have:
 -	MUST be created utilizing python
 -	Must be a 2D game
@@ -72,6 +75,3 @@ Additional Game Requirements:
 -	Must have a title screen
 -	You must have interactivity / collision programming with at least 2 of the other sprites and 2 environment objects
   with your main character
-
-
-
