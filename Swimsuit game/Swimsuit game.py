@@ -24,13 +24,15 @@ SCREEN_HEIGHT = 600
 SCREEN_TITLE = "Beach Bum Bob Bounces Bondi Beach"
 
 # Sprite scaling
-SPRITE_SCALING_PLAYER = 0.3
+SPRITE_SCALING_PLAYER = 0.15
 TILE_SCALING = 0.5
 COIN_SCALING = 0.5
+SPRITE_PIXEL_SIZE = 128
+GRID_PIXEL_SIZE = (SPRITE_PIXEL_SIZE * TILE_SCALING)
 
 # Physics and movement
 MOVEMENT_SPEED = 5
-GRAVITY = 1
+GRAVITY = 0.55
 PLAYER_JUMP_SPEED = 15
 
 # How many pixels to keep as a minimum margin between the character
@@ -125,32 +127,35 @@ class MyGame(arcade.Window):
         self.player_sprite.center_y = 150
         self.player_list.append(self.player_sprite)
 
-        # Create the ground
-        # This shows using a loop to place multiple sprites horizontally
-        for x in range(-1250, 12500, 64):
-            wall = arcade.Sprite("images/tiles/tutorial/sandMid.png", TILE_SCALING)
-            wall.center_x = x
-            wall.center_y = 32
-            self.wall_list.append(wall)
+        # --- Load in a map from the tiled editor ---
 
-        # Put some crates on the ground
-        # This shows using a coordinate list to place sprites
-        coordinate_list = [[512, 96],
-                           [256, 96],
-                           [768, 96]]
+        # Name of map file to load
+        map_name = "map.tmx"
+        # Name of the layer in the file that has our platforms/walls
+        platforms_layer_name = 'Platforms'
+        # Name of the layer that has items for pick-up
+        coins_layer_name = 'Coins'
 
-        for coordinate in coordinate_list:
-            # Add a crate on the ground
-            wall = arcade.Sprite("images/tiles/tutorial/boxCrate_double.png", TILE_SCALING)
-            wall.position = coordinate
-            self.wall_list.append(wall)
+        # Read in the tiled map
+        my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
 
-        # Use a loop to place some coins for our character to pick up
-        for x in range(384, 2500, 256):
-            coin = arcade.Sprite("images/items/tutorial/coinGold.png", COIN_SCALING)
-            coin.center_x = x
-            coin.center_y = 96
-            self.coin_list.append(coin)        
+        # -- Walls
+        # Grab the layer of items we can't move through
+        map_array = my_map.layers_int_data[platforms_layer_name]
+
+        # Calculate the right edge of the my_map in pixels
+        self.end_of_map = len(map_array[0]) * GRID_PIXEL_SIZE
+
+        # -- Platforms
+        self.wall_list = arcade.generate_sprites(my_map, platforms_layer_name, TILE_SCALING)
+
+        # -- Coins
+        self.coin_list = arcade.generate_sprites(my_map, coins_layer_name, TILE_SCALING)
+
+        # --- Other stuff
+        # Set the background color
+        if my_map.backgroundcolor:
+            arcade.set_background_color(my_map.backgroundcolor)       
 
         # Create the 'physics engine'
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player_sprite, self.wall_list, GRAVITY)
@@ -168,10 +173,10 @@ class MyGame(arcade.Window):
         Draw "Game over" across the screen.
         """
         output = "Game Over"
-        arcade.draw_text(output, 250 + self.view_left, 400, arcade.color.WHITE, 54)
+        arcade.draw_text(output, 250 + self.view_left, 400 + self.view_bottom, arcade.color.WHITE, 54)
 
         output = "Click to restart"
-        arcade.draw_text(output, 310 + self.view_left, 300, arcade.color.WHITE, 24)
+        arcade.draw_text(output, 310 + self.view_left, 300 + self.view_bottom, arcade.color.WHITE, 24)
 
     def draw_game(self):
         """
@@ -211,7 +216,49 @@ class MyGame(arcade.Window):
         else:
             self.draw_game()
             self.draw_game_over()
-                    
+
+    def on_key_press(self, key, modifiers):
+        """Called whenever a key is pressed. """
+
+        # Change states as needed.
+        if self.current_state == INSTRUCTIONS_PAGE_0:
+            # Next page of instructions.
+            self.current_state = INSTRUCTIONS_PAGE_1
+        elif self.current_state == INSTRUCTIONS_PAGE_1:
+            # Start the game
+            self.setup()
+            self.current_state = GAME_RUNNING
+        
+        # Only move the user if the game is running.
+        if self.current_state == GAME_RUNNING:
+            if key == arcade.key.UP:
+                if self.physics_engine.can_jump():
+                    self.player_sprite.change_y = PLAYER_JUMP_SPEED
+                    arcade.play_sound(self.jump_sound)
+            elif key == arcade.key.LEFT:
+                self.player_sprite.change_x = -MOVEMENT_SPEED
+            elif key == arcade.key.RIGHT:
+                self.player_sprite.change_x = MOVEMENT_SPEED
+
+    def on_key_release(self, key, modifiers):
+        """Called when the user releases a key. """
+        
+        # Only move the user if the game is running.
+        if self.current_state == GAME_RUNNING:
+            if key == arcade.key.LEFT or key == arcade.key.RIGHT:
+                self.player_sprite.change_x = 0
+
+    def on_mouse_press(self, x, y, button, modifiers):
+        """
+        Called when the user presses a mouse button.
+        """
+
+        # Change states as needed.
+        if self.current_state == GAME_OVER:
+            # Restart the game.
+            self.setup()
+            self.current_state = GAME_RUNNING
+            
     def update(self, delta_time):
         """ Movement and game logic """
 
@@ -285,48 +332,6 @@ class MyGame(arcade.Window):
                                     SCREEN_HEIGHT + self.view_bottom)
 
             # --- End Manage Scrolling ---
-            
-    def on_key_press(self, key, modifiers):
-        """Called whenever a key is pressed. """
-
-        # Change states as needed.
-        if self.current_state == INSTRUCTIONS_PAGE_0:
-            # Next page of instructions.
-            self.current_state = INSTRUCTIONS_PAGE_1
-        elif self.current_state == INSTRUCTIONS_PAGE_1:
-            # Start the game
-            self.setup()
-            self.current_state = GAME_RUNNING
-        
-        # Only move the user if the game is running.
-        if self.current_state == GAME_RUNNING:
-            if key == arcade.key.UP:
-                if self.physics_engine.can_jump():
-                    self.player_sprite.change_y = PLAYER_JUMP_SPEED
-                    arcade.play_sound(self.jump_sound)
-            elif key == arcade.key.LEFT:
-                self.player_sprite.change_x = -MOVEMENT_SPEED
-            elif key == arcade.key.RIGHT:
-                self.player_sprite.change_x = MOVEMENT_SPEED
-
-    def on_key_release(self, key, modifiers):
-        """Called when the user releases a key. """
-        
-        # Only move the user if the game is running.
-        if self.current_state == GAME_RUNNING:
-            if key == arcade.key.LEFT or key == arcade.key.RIGHT:
-                self.player_sprite.change_x = 0
-
-    def on_mouse_press(self, x, y, button, modifiers):
-        """
-        Called when the user presses a mouse button.
-        """
-
-        # Change states as needed.
-        if self.current_state == GAME_OVER:
-            # Restart the game.
-            self.setup()
-            self.current_state = GAME_RUNNING
             
 def main():
     """ Main method """
