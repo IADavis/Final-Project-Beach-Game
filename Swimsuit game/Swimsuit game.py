@@ -148,9 +148,7 @@ class MyGame(arcade.Window):
         # Name of the layer that has items for pick-up
         coins_layer_name = 'Coins'
 
-        # Name of the layer that has items for pick-up
-#        enemies_layer_name = 'Enemies'
-        
+       
         # -- Walls
         # Grab the layer of items we can't move through
         map_array = my_map.layers_int_data[platforms_layer_name]
