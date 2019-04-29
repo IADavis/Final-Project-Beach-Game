@@ -190,12 +190,12 @@ class MyGame(arcade.Window):
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
         arcade.draw_text(score_text, 10 + self.view_left, 10 + self.view_bottom,
-                         arcade.csscolor.WHITE, 18)        
+                         arcade.color.WHITE, 18)        
 
         # Draw our level on the screen, scrolling it with the viewport
         score_text = f"Level: {self.level}"
         arcade.draw_text(score_text, 120 + self.view_left, 10 + self.view_bottom,
-                         arcade.csscolor.WHITE, 18)
+                         arcade.color.WHITE, 18)
         
     def draw_game_over(self):
         """
