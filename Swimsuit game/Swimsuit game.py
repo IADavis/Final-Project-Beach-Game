@@ -120,15 +120,26 @@ class MyGame(arcade.Window):
         self.player_list = arcade.SpriteList()
         self.coin_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
+        self.enemyList = arcade.SpriteList()
 
         # Setup player
         self.player_sprite = arcade.Sprite("images/player_1/Swimsuit Guy.png", SPRITE_SCALING_PLAYER)
-        self.player_sprite.center_x = 64
-        self.player_sprite.center_y = 64
+        self.player_sprite.center_x = 1261
+        self.player_sprite.center_y = 423
         self.player_list.append(self.player_sprite)
+
+        #Setup enemies
+        self.enemySprite = arcade.Sprite("images/enemies/Henchman.png", SPRITE_SCALING_PLAYER)
+        self.enemySprite.center_x = 1251
+        self.enemySprite.center_y = 679
+        self.enemySprite.change_x = 3
+        self.enemyList.append(self.enemySprite)
 
         # Load the level
         self.load_level(self.level)
+
+    
+           
         
     def load_level(self, level):
         # Read in the tiled map lebel
@@ -186,6 +197,7 @@ class MyGame(arcade.Window):
         self.player_list.draw()
         self.wall_list.draw()
         self.coin_list.draw()
+        self.enemyList.draw()
 
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
@@ -349,6 +361,34 @@ class MyGame(arcade.Window):
                                     SCREEN_HEIGHT + self.view_bottom)
 
             # --- End Manage Scrolling ---
+
+            self.enemyList.update()
+            #Enemy AI
+            for enemy in self.enemyList:
+                #Gravity
+                self.wallCollide = arcade.check_for_collision_with_list(enemy,self.wall_list)
+                #print(str(len(self.wallCollide)))#Remove this line after debug
+                if len(self.wallCollide) < 1:
+                    enemy.change_x *= -1
+                    enemy.change_y = -GRAVITY*10
+                else:
+                    enemy.change_y = 0
+
+                #Stand on floor
+                if len(self.wallCollide) < 3 and len(self.wallCollide) >= 1:
+                    for wall in self.wallCollide:
+                        topBound = wall.top
+                        myBottomBound = enemy.bottom
+                        if topBound > myBottomBound:
+                            enemy.bottom = topBound-1
+                            
+                #Change direction when hit wall
+                if len(self.wallCollide) >= 3:
+                    enemy.change_x *= -1
+            #Use this print to figure out where to put enemies by using the player's coords
+            print(str(self.player_sprite.center_x) + "," + str(self.player_sprite.center_y))
+                
+                
             
 def main():
     """ Main method """
