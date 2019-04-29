@@ -65,6 +65,7 @@ class MyGame(arcade.Window):
         self.player_list = None
         self.wall_list = None
         self.coin_list = None
+        self.enemy_list = None
 
         #Sprite of player
         self.player_sprite = None
@@ -120,6 +121,7 @@ class MyGame(arcade.Window):
         self.player_list = arcade.SpriteList()
         self.coin_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
+#        self.enemy_list = arcade.SpriteList()
 
         # Setup player
         self.player_sprite = arcade.Sprite("images/player_1/Swimsuit Guy.png", SPRITE_SCALING_PLAYER)
@@ -140,6 +142,9 @@ class MyGame(arcade.Window):
         # Name of the layer that has items for pick-up
         coins_layer_name = 'Coins'
 
+        # Name of the layer that has items for pick-up
+#        enemies_layer_name = 'Enemies'
+        
         # -- Walls
         # Grab the layer of items we can't move through
         map_array = my_map.layers_int_data[platforms_layer_name]
@@ -153,6 +158,9 @@ class MyGame(arcade.Window):
         # -- Coins
         self.coin_list = arcade.generate_sprites(my_map, coins_layer_name, TILE_SCALING)
 
+        # -- Enemies
+#        self.enemy_list = arcade.generate_sprites(my_map, enemies_layer_name, TILE_SCALING)
+        
         # --- Other stuff
         # Set the background color
         if my_map.backgroundcolor:
@@ -186,7 +194,8 @@ class MyGame(arcade.Window):
         self.player_list.draw()
         self.wall_list.draw()
         self.coin_list.draw()
-
+#        self.enemy_list.draw()
+        
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
         arcade.draw_text(score_text, 10 + self.view_left, 10 + self.view_bottom,
@@ -280,6 +289,9 @@ class MyGame(arcade.Window):
             # list.        
             self.physics_engine.update()
 
+
+            # --- Manage Coins ---
+            
             # See if we hit any coins
             coin_hit_list = arcade.check_for_collision_with_list(self.player_sprite,
                                                                  self.coin_list)
@@ -291,8 +303,8 @@ class MyGame(arcade.Window):
                 # Play a sound
                 arcade.play_sound(self.collect_coin_sound)
                 # Add one to the score
+                
                 self.score += 1
-
 
             # If we've collected all the coins, then go to next level
             if len(self.coin_list) == 0:
@@ -306,7 +318,31 @@ class MyGame(arcade.Window):
                 else:
                     self.current_state = GAME_OVER
                     self.set_mouse_visible(True)
+
+
+            # --- Manage Enemies ---
+            
+            # Move the enemies
+#            self.enemy_list.update()
+
+            # Check each enemy
+#            for enemy in self.enemy_list:
+                # If the enemy hit a wall, reverse
+#                if len(arcade.check_for_collision_with_list(enemy, self.wall_list)) > 0:
+#                    enemy.change_x *= -1
+                # If the enemy hit the left boundary, reverse
+#                elif enemy.boundary_left is not None and enemy.left < enemy.boundary_left:
+#                    enemy.change_x *= -1
+                # If the enemy hit the right boundary, reverse
+#                elif enemy.boundary_right is not None and enemy.right > enemy.boundary_right:
+#                    enemy.change_x *= -1
+
+            # See if the player hit a worm. If so, game over.
+#            if len(arcade.check_for_collision_with_list(self.player_sprite, self.enemy_list)) > 0:
+#                self.current_state = GAME_OVER
+#                self.set_mouse_visible(True)
                 
+            
             # --- Manage Screen Scrolling ---
 
             # Track if we need to change the viewport
