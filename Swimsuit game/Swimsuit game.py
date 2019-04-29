@@ -19,16 +19,19 @@ import os
 
 ######################## CONSTANTS ####################
 # Screen
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1024
+SCREEN_HEIGHT = 768
 SCREEN_TITLE = "Beach Bum Bob Bounces Bondi Beach"
 
 # Sprite scaling
 SPRITE_SCALING_PLAYER = 0.15
 TILE_SCALING = 0.5
 COIN_SCALING = 0.5
+SPRITE_SCALING = 0.5
 SPRITE_PIXEL_SIZE = 128
 GRID_PIXEL_SIZE = (SPRITE_PIXEL_SIZE * TILE_SCALING)
+SPRITE_SIZE = int(SPRITE_PIXEL_SIZE * SPRITE_SCALING)
+
 
 # Physics and movement
 MOVEMENT_SPEED = 5
@@ -83,6 +86,8 @@ class MyGame(arcade.Window):
         # Load sounds
         self.collect_coin_sound = arcade.load_sound("sounds/coin1.wav")
         self.jump_sound = arcade.load_sound("sounds/jump1.wav")
+        self.hurt_sound = arcade.load_sound("sounds/hurt1.wav")
+        self.gameover1_sound = arcade.load_sound("sounds/gameover1.wav")
         
         # Keep track of the score
         self.score = 0
@@ -121,7 +126,8 @@ class MyGame(arcade.Window):
         self.player_list = arcade.SpriteList()
         self.coin_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
-#        self.enemy_list = arcade.SpriteList()
+        self.enemy_list = arcade.SpriteList()
+
 
         # Setup player
         self.player_sprite = arcade.Sprite("images/player_1/Swimsuit Guy.png", SPRITE_SCALING_PLAYER)
@@ -159,8 +165,29 @@ class MyGame(arcade.Window):
         self.coin_list = arcade.generate_sprites(my_map, coins_layer_name, TILE_SCALING)
 
         # -- Enemies
-#        self.enemy_list = arcade.generate_sprites(my_map, enemies_layer_name, TILE_SCALING)
-        
+
+        # -- Draw an enemy on the ground
+        enemy = arcade.Sprite("images/enemies/wormGreen.png", SPRITE_SCALING)
+
+        enemy.bottom = SPRITE_SIZE
+        enemy.left = SPRITE_SIZE * 2
+
+        # Set enemy initial speed
+        enemy.change_x = 2
+        self.enemy_list.append(enemy)
+
+        # -- Draw a enemy on the platform
+        enemy = arcade.Sprite("images/enemies/wormGreen.png", SPRITE_SCALING)
+
+        enemy.bottom = SPRITE_SIZE * 4
+        enemy.left = SPRITE_SIZE * 4
+
+        # Set boundaries on the left/right the enemy can't cross
+        enemy.boundary_right = SPRITE_SIZE * 8
+        enemy.boundary_left = SPRITE_SIZE * 3
+        enemy.change_x = 2
+        self.enemy_list.append(enemy)
+       
         # --- Other stuff
         # Set the background color
         if my_map.backgroundcolor:
@@ -194,17 +221,18 @@ class MyGame(arcade.Window):
         self.player_list.draw()
         self.wall_list.draw()
         self.coin_list.draw()
-#        self.enemy_list.draw()
+        self.enemy_list.draw()
+
         
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
         arcade.draw_text(score_text, 10 + self.view_left, 10 + self.view_bottom,
-                         arcade.csscolor.WHITE, 18)        
+                         arcade.color.WHITE, 18)        
 
         # Draw our level on the screen, scrolling it with the viewport
         score_text = f"Level: {self.level}"
         arcade.draw_text(score_text, 120 + self.view_left, 10 + self.view_bottom,
-                         arcade.csscolor.WHITE, 18)
+                         arcade.color.WHITE, 18)
         
     def draw_game_over(self):
         """
@@ -296,6 +324,7 @@ class MyGame(arcade.Window):
             coin_hit_list = arcade.check_for_collision_with_list(self.player_sprite,
                                                                  self.coin_list)
 
+            # --- Manage Coins ---  
             # Loop through each coin we hit (if any) and remove it
             for coin in coin_hit_list:
                 # Remove the coin
@@ -316,32 +345,33 @@ class MyGame(arcade.Window):
                     self.player_sprite.center_x = 64
                     self.player_sprite.center_y = 64
                 else:
+                    arcade.play_sound(self.gameover1_sound)
                     self.current_state = GAME_OVER
                     self.set_mouse_visible(True)
 
-
-            # --- Manage Enemies ---
-            
+            # --- Manage Enemies ---            
             # Move the enemies
-#            self.enemy_list.update()
+            self.enemy_list.update()
 
             # Check each enemy
-#            for enemy in self.enemy_list:
+            for enemy in self.enemy_list:
                 # If the enemy hit a wall, reverse
-#                if len(arcade.check_for_collision_with_list(enemy, self.wall_list)) > 0:
-#                    enemy.change_x *= -1
+                if len(arcade.check_for_collision_with_list(enemy, self.wall_list)) > 0:
+                    enemy.change_x *= -1
                 # If the enemy hit the left boundary, reverse
-#                elif enemy.boundary_left is not None and enemy.left < enemy.boundary_left:
-#                    enemy.change_x *= -1
+                elif enemy.boundary_left is not None and enemy.left < enemy.boundary_left:
+                    enemy.change_x *= -1
                 # If the enemy hit the right boundary, reverse
-#                elif enemy.boundary_right is not None and enemy.right > enemy.boundary_right:
-#                    enemy.change_x *= -1
+                elif enemy.boundary_right is not None and enemy.right > enemy.boundary_right:
+                    enemy.change_x *= -1
 
-            # See if the player hit a worm. If so, game over.
-#            if len(arcade.check_for_collision_with_list(self.player_sprite, self.enemy_list)) > 0:
-#                self.current_state = GAME_OVER
-#                self.set_mouse_visible(True)
-                
+            # See if the player hit an enemy If so, game over.
+            if len(arcade.check_for_collision_with_list(self.player_sprite, self.enemy_list)) > 0:
+                arcade.play_sound(self.hurt_sound)
+                arcade.play_sound(self.gameover1_sound)
+                self.current_state = GAME_OVER
+                self.set_mouse_visible(True)
+       
             
             # --- Manage Screen Scrolling ---
 
