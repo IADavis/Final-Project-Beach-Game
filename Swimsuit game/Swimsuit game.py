@@ -23,6 +23,10 @@ SCREEN_WIDTH = 1024
 SCREEN_HEIGHT = 768
 SCREEN_TITLE = "Beach Bum Bob Bounces Bondi Beach"
 
+#Background
+BACKGROUND_WIDTH = 1920
+BACKGROUND_HEIGHT = 1080
+
 # Sprite scaling
 SPRITE_SCALING_PLAYER = 0.15
 TILE_SCALING = 0.5
@@ -215,8 +219,8 @@ class MyGame(arcade.Window):
         """
         
         # Draw background
-        arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
-                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
+        arcade.draw_texture_rectangle(BACKGROUND_WIDTH // 2, BACKGROUND_HEIGHT // 2,
+                                      BACKGROUND_WIDTH, BACKGROUND_HEIGHT, self.background)
 
         # Draw all the sprites
         self.player_list.draw()
@@ -323,7 +327,7 @@ class MyGame(arcade.Window):
             changed_viewport = False
             
             # Did the player fall off the map?
-            if self.player_sprite.center_y < -10:
+            if self.player_sprite.center_y < -1:
                 arcade.play_sound(self.gameover1_sound)
                 self.current_state = GAME_OVER
                 self.set_mouse_visible(True)            
