@@ -50,6 +50,10 @@ INSTRUCTIONS_PAGE_1 = 1
 GAME_RUNNING = 2
 GAME_OVER = 3
 
+# Player Start position
+PLAYER_START_X = 64
+PLAYER_START_Y = 94
+
 class MyGame(arcade.Window):
 
     def __init__(self):
@@ -130,8 +134,8 @@ class MyGame(arcade.Window):
 
         # Setup player
         self.player_sprite = arcade.Sprite("images/player_1/Swimsuit Guy.png", SPRITE_SCALING_PLAYER)
-        self.player_sprite.center_x = 64
-        self.player_sprite.center_y = 64
+        self.player_sprite.center_x = PLAYER_START_X
+        self.player_sprite.center_y = PLAYER_START_Y
         self.player_list.append(self.player_sprite)
 
         # Load the level
@@ -314,14 +318,23 @@ class MyGame(arcade.Window):
             # list.        
             self.physics_engine.update()
 
+            # --- Manage Player ---
+            # Track if we need to change the viewport
+            changed_viewport = False
+            
+            # Did the player fall off the map?
+            if self.player_sprite.center_y < -10:
+                arcade.play_sound(self.gameover1_sound)
+                self.current_state = GAME_OVER
+                self.set_mouse_visible(True)            
+            
 
             # --- Manage Coins ---
             
             # See if we hit any coins
             coin_hit_list = arcade.check_for_collision_with_list(self.player_sprite,
                                                                  self.coin_list)
-
-            # --- Manage Coins ---  
+  
             # Loop through each coin we hit (if any) and remove it
             for coin in coin_hit_list:
                 # Remove the coin
@@ -339,8 +352,8 @@ class MyGame(arcade.Window):
                     self.load_level(self.level)
                     self.player_sprite.change_x = 0
                     self.player_sprite.change_y = 0
-                    self.player_sprite.center_x = 64
-                    self.player_sprite.center_y = 64
+                    self.player_sprite.center_x = PLAYER_START_X
+                    self.player_sprite.center_y = PLAYER_START_Y
                 else:
                     arcade.play_sound(self.gameover1_sound)
                     self.current_state = GAME_OVER
@@ -372,34 +385,31 @@ class MyGame(arcade.Window):
             
             # --- Manage Screen Scrolling ---
 
-            # Track if we need to change the viewport
-            changed = False
-
             # Scroll left
             left_boundry = self.view_left + LEFT_VIEWPORT_MARGIN
             if self.player_sprite.left < left_boundry:
                 self.view_left -= left_boundry - self.player_sprite.left
-                changed = True
+                changed_viewport = True
 
             # Scroll right
             right_boundry = self.view_left + SCREEN_WIDTH - RIGHT_VIEWPORT_MARGIN
             if self.player_sprite.right > right_boundry:
                 self.view_left += self.player_sprite.right - right_boundry
-                changed = True
+                changed_viewport = True
 
             # Scroll up
             top_boundry = self.view_bottom + SCREEN_HEIGHT - TOP_VIEWPORT_MARGIN
             if self.player_sprite.top > top_boundry:
                 self.view_bottom += self.player_sprite.top - top_boundry
-                changed = True
+                changed_viewport = True
 
             # Scroll down
             bottom_boundry = self.view_bottom + BOTTOM_VIEWPORT_MARGIN
             if self.player_sprite.bottom < bottom_boundry:
                 self.view_bottom -= bottom_boundry - self.player_sprite.bottom
-                changed = True
+                changed_viewport = True
 
-            if changed:
+            if changed_viewport:
                 # Only scroll to integers. Otherwise we end up with pixels that
                 # don't line up on the screen
                 self.view_bottom = int(self.view_bottom)
