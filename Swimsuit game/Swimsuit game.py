@@ -23,6 +23,11 @@ SCREEN_WIDTH = 1024
 SCREEN_HEIGHT = 768
 SCREEN_TITLE = "Beach Bum Bob Bounces Bondi Beach"
 
+#Background
+BACKGROUND_SCALE = 0.35
+BACKGROUND_WIDTH = 1920 * BACKGROUND_SCALE
+BACKGROUND_HEIGHT = 1080 * BACKGROUND_SCALE
+
 # Sprite scaling
 SPRITE_SCALING_PLAYER = 0.15
 TILE_SCALING = 0.5
@@ -96,7 +101,7 @@ class MyGame(arcade.Window):
         self.score = 0
        
         #Background color beyond back ground image
-        arcade.set_background_color(arcade.color.SAND)
+        arcade.set_background_color([137,255,255])
 
         # Background image will be stored in this variable
         self.background = None
@@ -214,9 +219,10 @@ class MyGame(arcade.Window):
         Draw background, all the sprites, along with the score.
         """
         
-        # Draw background
-        arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
-                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
+        # Draw in 5 backgrounds
+        for i in range(-1, 3, 1):
+            arcade.draw_texture_rectangle(i * BACKGROUND_WIDTH + BACKGROUND_WIDTH // 2, 64 + BACKGROUND_HEIGHT // 2,
+                                      BACKGROUND_WIDTH, BACKGROUND_HEIGHT, self.background)
 
         # Draw all the sprites
         self.player_list.draw()
@@ -228,12 +234,12 @@ class MyGame(arcade.Window):
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
         arcade.draw_text(score_text, 10 + self.view_left, 10 + self.view_bottom,
-                         arcade.color.WHITE, 18)        
+                         arcade.color.CADMIUM_RED, 18)        
 
         # Draw our level on the screen, scrolling it with the viewport
         score_text = f"Level: {self.level}"
         arcade.draw_text(score_text, 120 + self.view_left, 10 + self.view_bottom,
-                         arcade.color.WHITE, 18)
+                         arcade.color.CADMIUM_RED, 18)
         
     def draw_game_over(self):
         """
@@ -323,7 +329,7 @@ class MyGame(arcade.Window):
             changed_viewport = False
             
             # Did the player fall off the map?
-            if self.player_sprite.center_y < -10:
+            if self.player_sprite.center_y < -1:
                 arcade.play_sound(self.gameover1_sound)
                 self.current_state = GAME_OVER
                 self.set_mouse_visible(True)            
