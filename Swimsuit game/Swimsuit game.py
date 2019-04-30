@@ -23,7 +23,8 @@ SCREEN_WIDTH = 1024
 SCREEN_HEIGHT = 768
 SCREEN_TITLE = "Beach Bum Bob Bounces Bondi Beach"
 
-#Background
+#Background graphics
+NUMBER_BACKGOUNDS = 6
 BACKGROUND_SCALE = 0.35
 BACKGROUND_WIDTH = 1920 * BACKGROUND_SCALE
 BACKGROUND_HEIGHT = 1080 * BACKGROUND_SCALE
@@ -56,7 +57,7 @@ GAME_RUNNING = 2
 GAME_OVER = 3
 
 # Player Start position
-PLAYER_START_X = 64
+PLAYER_START_X = 192
 PLAYER_START_Y = 94
 
 class MyGame(arcade.Window):
@@ -176,7 +177,7 @@ class MyGame(arcade.Window):
         enemy = arcade.Sprite("images/enemies/wormGreen.png", SPRITE_SCALING)
 
         enemy.bottom = SPRITE_SIZE
-        enemy.left = SPRITE_SIZE * 2
+        enemy.left = SPRITE_SIZE * 5
 
         # Set enemy initial speed
         enemy.change_x = 2
@@ -185,12 +186,12 @@ class MyGame(arcade.Window):
         # -- Draw a enemy on the platform
         enemy = arcade.Sprite("images/enemies/wormGreen.png", SPRITE_SCALING)
 
-        enemy.bottom = SPRITE_SIZE * 4
-        enemy.left = SPRITE_SIZE * 4
+        enemy.bottom = SPRITE_SIZE * 5
+        enemy.left = SPRITE_SIZE * 11
 
         # Set boundaries on the left/right the enemy can't cross
-        enemy.boundary_right = SPRITE_SIZE * 8
-        enemy.boundary_left = SPRITE_SIZE * 3
+        enemy.boundary_right = SPRITE_SIZE * 13
+        enemy.boundary_left = SPRITE_SIZE * 9
         enemy.change_x = 2
         self.enemy_list.append(enemy)
        
@@ -219,8 +220,8 @@ class MyGame(arcade.Window):
         Draw background, all the sprites, along with the score.
         """
         
-        # Draw in 5 backgrounds
-        for i in range(-1, 3, 1):
+        # Draw in backgrounds
+        for i in range(-1, NUMBER_BACKGOUNDS, 1):
             arcade.draw_texture_rectangle(i * BACKGROUND_WIDTH + BACKGROUND_WIDTH // 2, 64 + BACKGROUND_HEIGHT // 2,
                                       BACKGROUND_WIDTH, BACKGROUND_HEIGHT, self.background)
 
