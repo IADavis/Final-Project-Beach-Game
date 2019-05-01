@@ -99,13 +99,13 @@ class MyGame(arcade.Window):
         self.gameover1_sound = arcade.load_sound("sounds/gameover1.wav")
         
         # Keep track of the score
-        self.score = 0
+        self.score = None
        
         #Background color beyond back ground image
         arcade.set_background_color([137,255,255])
 
         # Background image will be stored in this variable
-        self.background = None
+        self.background = 0
 
         # INSTRUCTION PAGES: Put each instruction page in an image. Make sure the image
         # matches the dimensions of the window, or it will stretch and look
@@ -131,6 +131,10 @@ class MyGame(arcade.Window):
         # Keep track of the score
         self.score = 0
 
+        # Define starting level and maximum number of levels
+        self.level = 1
+        self.max_level = 3
+        
         # Sprite Lists
         self.player_list = arcade.SpriteList()
         self.coin_list = arcade.SpriteList()
@@ -146,7 +150,8 @@ class MyGame(arcade.Window):
 
         # Load the level
         self.load_level(self.level)
-        
+
+      
     def load_level(self, level):
         # Read in the tiled map lebel
         my_map = arcade.read_tiled_map(f"level_{level}.tmx", TILE_SCALING)
@@ -157,6 +162,9 @@ class MyGame(arcade.Window):
         # Name of the layer that has items for pick-up
         coins_layer_name = 'Coins'
 
+        # Name of the layer that has enemies
+        #(doesn;t really have enemies, just clears previous level's enemies from memory)
+        enemies_layer_name = 'Enemies'
        
         # -- Walls
         # Grab the layer of items we can't move through
@@ -172,8 +180,9 @@ class MyGame(arcade.Window):
         self.coin_list = arcade.generate_sprites(my_map, coins_layer_name, TILE_SCALING)
 
         # -- Enemies
-
-        # -- Draw an enemy on the ground
+        self.enemy_list = arcade.generate_sprites(my_map, enemies_layer_name, TILE_SCALING)
+               
+        # Draw an enemy on the ground
         enemy = arcade.Sprite("images/enemies/wormGreen.png", SPRITE_SCALING)
 
         enemy.bottom = SPRITE_SIZE
@@ -238,8 +247,8 @@ class MyGame(arcade.Window):
                          arcade.color.CADMIUM_RED, 18)        
 
         # Draw our level on the screen, scrolling it with the viewport
-        score_text = f"Level: {self.level}"
-        arcade.draw_text(score_text, 120 + self.view_left, 10 + self.view_bottom,
+        level_text = f"Level: {self.level}"
+        arcade.draw_text(level_text, 120 + self.view_left, 10 + self.view_bottom,
                          arcade.color.CADMIUM_RED, 18)
         
     def draw_game_over(self):
@@ -247,10 +256,10 @@ class MyGame(arcade.Window):
         Draw "Game over" across the screen.
         """
         output = "Game Over"
-        arcade.draw_text(output, 250 + self.view_left, 400 + self.view_bottom, arcade.color.WHITE, 54)
+        arcade.draw_text(output, 250 + self.view_left, 400 + self.view_bottom, arcade.color.CADMIUM_RED, 54)
 
         output = "Click to restart"
-        arcade.draw_text(output, 310 + self.view_left, 300 + self.view_bottom, arcade.color.WHITE, 24)
+        arcade.draw_text(output, 310 + self.view_left, 300 + self.view_bottom, arcade.color.CADMIUM_RED, 24)
         
     def on_draw(self):
         """ Render the screen. """
@@ -391,7 +400,6 @@ class MyGame(arcade.Window):
        
             
             # --- Manage Screen Scrolling ---
-
             # Scroll left
             left_boundry = self.view_left + LEFT_VIEWPORT_MARGIN
             if self.player_sprite.left < left_boundry:
