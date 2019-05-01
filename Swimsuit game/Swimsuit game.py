@@ -162,7 +162,8 @@ class MyGame(arcade.Window):
         # Name of the layer that has items for pick-up
         coins_layer_name = 'Coins'
 
-        # Name of the layer that has items for pick-up
+        # Name of the layer that has enemies
+        #(doesn;t really have enemies, just clears previous level's enemies from memory)
         enemies_layer_name = 'Enemies'
        
         # -- Walls
