@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="5" nextobjectid="1">
- <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="146" columns="0">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+ <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="151" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -468,6 +468,21 @@
     </object>
    </objectgroup>
   </tile>
+  <tile id="163">
+   <image width="55" height="85" source="images/items/Gem1.png"/>
+  </tile>
+  <tile id="164">
+   <image width="55" height="85" source="images/items/Gem2.png"/>
+  </tile>
+  <tile id="165">
+   <image width="55" height="85" source="images/items/Gem3.png"/>
+  </tile>
+  <tile id="166">
+   <image width="128" height="128" source="images/items/coinBronze.png"/>
+  </tile>
+  <tile id="167">
+   <image width="128" height="128" source="images/items/coinSilver.png"/>
+  </tile>
  </tileset>
  <layer id="3" name="Platforms" width="60" height="20">
   <data encoding="base64" compression="zlib">
@@ -476,7 +491,12 @@
  </layer>
  <layer id="4" name="Coins" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt0zEOACAIA0D+/w0+6uqok6ncJSyMpVQxTR/umEcP4B3/d0deWdyLX+k2ySb1t7ch1wIgngcC
+   eJztzjEKACAMA8D+/xtV3+naUSjo4B0EMoVEAAAAAD/J1wcuypKOWfoqfTR3ObMB+oEEfA==
+  </data>
+ </layer>
+ <layer id="5" name="Enemies" width="60" height="20" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20ND6AAAAAA4NcAEsAAAQ==
   </data>
  </layer>
 </map>

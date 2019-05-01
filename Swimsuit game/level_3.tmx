@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="3" nextobjectid="1">
- <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="163" columns="0">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="4" nextobjectid="1">
+ <tileset firstgid="1" name="my_tiles" tilewidth="240" tileheight="512" tilecount="158" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -41,9 +41,6 @@
   </tile>
   <tile id="8">
    <image width="128" height="128" source="images/tiles/cactus.png"/>
-  </tile>
-  <tile id="9">
-   <image width="128" height="128" source="images/tiles/chain.png"/>
   </tile>
   <tile id="10">
    <image width="128" height="128" source="images/tiles/dirt.png"/>
@@ -104,18 +101,6 @@
   </tile>
   <tile id="29">
    <image width="128" height="128" source="images/tiles/doorClosed_top.png"/>
-  </tile>
-  <tile id="30">
-   <image width="128" height="128" source="images/tiles/doorOpen_mid.png"/>
-  </tile>
-  <tile id="31">
-   <image width="128" height="128" source="images/tiles/doorOpen_top.png"/>
-  </tile>
-  <tile id="32">
-   <image width="128" height="128" source="images/tiles/fence.png"/>
-  </tile>
-  <tile id="33">
-   <image width="128" height="128" source="images/tiles/fenceBroken.png"/>
   </tile>
   <tile id="34">
    <image width="128" height="128" source="images/tiles/grass.png"/>
@@ -203,20 +188,11 @@
   <tile id="60">
    <image width="128" height="128" source="images/tiles/leverRight.png"/>
   </tile>
-  <tile id="61">
-   <image width="128" height="128" source="images/tiles/lockBlue.png"/>
-  </tile>
-  <tile id="62">
-   <image width="128" height="128" source="images/tiles/lockGreen.png"/>
-  </tile>
   <tile id="63">
    <image width="128" height="128" source="images/tiles/lockRed.png"/>
   </tile>
   <tile id="64">
    <image width="128" height="128" source="images/tiles/lockYellow.png"/>
-  </tile>
-  <tile id="65">
-   <image width="128" height="128" source="images/tiles/mushroomBrown.png"/>
   </tile>
   <tile id="66">
    <image width="128" height="128" source="images/tiles/mushroomRed.png"/>
@@ -463,12 +439,6 @@
   <tile id="145">
    <image width="128" height="128" source="images/tiles/stoneRight.png"/>
   </tile>
-  <tile id="146">
-   <image width="128" height="128" source="images/tiles/switchBlue.png"/>
-  </tile>
-  <tile id="147">
-   <image width="128" height="128" source="images/tiles/switchBlue_pressed.png"/>
-  </tile>
   <tile id="148">
    <image width="128" height="128" source="images/tiles/switchGreen.png"/>
   </tile>
@@ -481,21 +451,6 @@
   <tile id="151">
    <image width="128" height="128" source="images/tiles/switchRed_pressed.png"/>
   </tile>
-  <tile id="152">
-   <image width="128" height="128" source="images/tiles/switchYellow.png"/>
-  </tile>
-  <tile id="153">
-   <image width="128" height="128" source="images/tiles/switchYellow_pressed.png"/>
-  </tile>
-  <tile id="154">
-   <image width="128" height="128" source="images/tiles/torch1.png"/>
-  </tile>
-  <tile id="155">
-   <image width="128" height="128" source="images/tiles/torch2.png"/>
-  </tile>
-  <tile id="156">
-   <image width="128" height="128" source="images/tiles/torchOff.png"/>
-  </tile>
   <tile id="157">
    <image width="128" height="128" source="images/tiles/water.png"/>
   </tile>
@@ -505,12 +460,6 @@
   <tile id="159">
    <image width="128" height="128" source="images/tiles/waterTop_low.png"/>
   </tile>
-  <tile id="160">
-   <image width="128" height="128" source="images/tiles/weight.png"/>
-  </tile>
-  <tile id="161">
-   <image width="128" height="128" source="images/tiles/weightAttached.png"/>
-  </tile>
   <tile id="162">
    <image width="128" height="128" source="images/items/coinGold.png"/>
    <objectgroup draworder="index">
@@ -519,15 +468,56 @@
     </object>
    </objectgroup>
   </tile>
+  <tile id="163">
+   <image width="17" height="17" source="images/enemies/BeachBall1.png"/>
+  </tile>
+  <tile id="164">
+   <image width="17" height="17" source="images/enemies/BeachBall2.png"/>
+  </tile>
+  <tile id="165">
+   <image width="17" height="17" source="images/enemies/BeachBall3.png"/>
+  </tile>
+  <tile id="166">
+   <image width="240" height="512" source="images/enemies/HenchmanBlack.png"/>
+  </tile>
+  <tile id="167">
+   <image width="240" height="480" source="images/enemies/HenchmanBlue.png"/>
+  </tile>
+  <tile id="168">
+   <image width="240" height="480" source="images/enemies/HenchmanRed.png"/>
+  </tile>
+  <tile id="169">
+   <image width="75" height="70" source="images/enemies/SeaGull1.png"/>
+  </tile>
+  <tile id="170">
+   <image width="75" height="70" source="images/enemies/SeaGull2.png"/>
+  </tile>
+  <tile id="171">
+   <image width="75" height="70" source="images/enemies/SeaGull3.png"/>
+  </tile>
+  <tile id="172">
+   <image width="55" height="85" source="images/items/Gem1.png"/>
+  </tile>
+  <tile id="173">
+   <image width="55" height="85" source="images/items/Gem2.png"/>
+  </tile>
+  <tile id="174">
+   <image width="55" height="85" source="images/items/Gem3.png"/>
+  </tile>
  </tileset>
- <layer id="1" name="Platforms" width="25" height="20">
+ <layer id="1" name="Platforms" width="25" height="20" locked="1">
   <data encoding="base64" compression="zlib">
-   eJxjYKAMsCNhWgBamUst83PR+LVAXAfE9RSaOxgByG8gf7EhYXL8ix5mtAYgN1bT2I58IC5lgIQFpfE/FNIQteNQCoilgVhmgM0YaoCa4UaqOUZAzESBvcSYr0MlOxjxmK9KBTsYsdiBbD4IGwOxCZUxsvkgDADk9hI/
+   eJxjYKAMsCNhWgBamUst83PR+LVAXAfE9RSaOxgByG8gf7EhYXL8ix5mtAYgN1bT2I58IC5lgIQFpfE/FNIQteMwHYgzgDhzgM0YaoCa4UaqOWlAzESBvcSYn0AlOxjxmK9KBTsYkTA280E4gwYY2XwQBgDeJhwO
   </data>
  </layer>
  <layer id="2" name="Coins" width="25" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBi+YDGRYsMZjDT/0hoMhfAcrG4crO4a7GA03HADWofNYiQ8FAAAmrUHAg==
+   eJxjYBgFo2AUjIJRMApGDlhHQH4tGn8xmebQGwAA498CrQ==
+  </data>
+ </layer>
+ <layer id="3" name="Enemies" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
   </data>
  </layer>
 </map>
