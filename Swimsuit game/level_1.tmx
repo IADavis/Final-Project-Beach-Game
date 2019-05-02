@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
- <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="151" columns="0">
+ <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="154" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -86,6 +86,11 @@
   </tile>
   <tile id="24">
    <image width="128" height="128" source="images/tiles/dirtHill_right.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="126" y="-4">
+     <polygon points="0,0 -124,130 -1,133"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="25">
    <image width="128" height="128" source="images/tiles/dirtLeft.png"/>
@@ -483,6 +488,15 @@
   <tile id="167">
    <image width="128" height="128" source="images/items/coinSilver.png"/>
   </tile>
+  <tile id="168">
+   <image width="128" height="128" source="images/items/CoinBronze2.png"/>
+  </tile>
+  <tile id="169">
+   <image width="128" height="128" source="images/items/CoinGold2.png"/>
+  </tile>
+  <tile id="170">
+   <image width="128" height="128" source="images/items/CoinSilver2.png"/>
+  </tile>
  </tileset>
  <layer id="3" name="Platforms" width="60" height="20">
   <data encoding="base64" compression="zlib">
@@ -491,10 +505,10 @@
  </layer>
  <layer id="4" name="Coins" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJztzjEKACAMA8D+/xtV3+naUSjo4B0EMoVEAAAAAD/J1wcuypKOWfoqfTR3ObMB+oEEfA==
+   eJztzrENACAMA7D+fwcgAU/SoSMzC7YUJWMiAAAAALiZ1T2zao/Mrt2eP/rTAddTA+4=
   </data>
  </layer>
- <layer id="5" name="Enemies" width="60" height="20" visible="0">
+ <layer id="5" name="Enemies" width="60" height="20">
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T20ND6AAAAAA4NcAEsAAAQ==
   </data>
