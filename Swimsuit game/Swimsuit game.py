@@ -2,7 +2,7 @@
 BEACH BUM BOB BOUNCES BONDI BEACH (or other title)
 
 SDEV 140 Spring 2019 - Final Project
-Version 0.1.13
+Version 0.1.14
 
 Authors:
 Andy Olson Moyano
@@ -55,6 +55,7 @@ INSTRUCTIONS_PAGE_0 = 0
 INSTRUCTIONS_PAGE_1 = 1
 GAME_RUNNING = 2
 GAME_OVER = 3
+GAME_WINNER = 4
 
 # Player Start position
 PLAYER_START_X = 192
@@ -97,6 +98,8 @@ class MyGame(arcade.Window):
         self.jump_sound = arcade.load_sound("sounds/jump1.wav")
         self.hurt_sound = arcade.load_sound("sounds/hurt1.wav")
         self.gameover1_sound = arcade.load_sound("sounds/gameover1.wav")
+        self.upgrade1_sound = arcade.load_sound("sounds/upgrade1.wav")
+        self.upgrade2_sound = arcade.load_sound("sounds/upgrade2.wav")
         
         # Keep track of the score
         self.score = None
@@ -338,6 +341,16 @@ class MyGame(arcade.Window):
 
         output = "Click to restart"
         arcade.draw_text(output, 310 + self.view_left, 300 + self.view_bottom, arcade.color.CADMIUM_RED, 24)
+
+    def draw_game_winner(self):
+        """
+        Draw "Winner!" across the screen.
+        """
+        output = "Winner!!"
+        arcade.draw_text(output, 285 + self.view_left, 400 + self.view_bottom, arcade.color.CADMIUM_RED, 54)
+
+        output = "Click to restart"
+        arcade.draw_text(output, 310 + self.view_left, 300 + self.view_bottom, arcade.color.CADMIUM_RED, 24)
         
     def on_draw(self):
         """ Render the screen. """
@@ -355,9 +368,12 @@ class MyGame(arcade.Window):
         elif self.current_state == GAME_RUNNING:
             self.draw_game()
 
-        else:
+        elif self.current_state == GAME_OVER:
             self.draw_game()
             self.draw_game_over()
+        else:
+            self.draw_game()
+            self.draw_game_winner()
 
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed. """
@@ -396,7 +412,7 @@ class MyGame(arcade.Window):
         """
 
         # Change states as needed.
-        if self.current_state == GAME_OVER:
+        if self.current_state == GAME_OVER or self.current_state == GAME_WINNER:
             # Restart the game.
             self.setup()
             self.current_state = GAME_RUNNING
@@ -448,9 +464,10 @@ class MyGame(arcade.Window):
                     self.player_sprite.change_y = 0
                     self.player_sprite.center_x = PLAYER_START_X
                     self.player_sprite.center_y = PLAYER_START_Y
+                    arcade.play_sound(self.upgrade1_sound)
                 else:
-                    arcade.play_sound(self.gameover1_sound)
-                    self.current_state = GAME_OVER
+                    arcade.play_sound(self.upgrade2_sound)
+                    self.current_state = GAME_WINNER
                     self.set_mouse_visible(True)
 
             # --- Manage Enemies ---            
