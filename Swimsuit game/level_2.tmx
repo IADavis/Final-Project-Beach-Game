@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="4" nextobjectid="1">
- <tileset firstgid="1" name="my_tiles" tilewidth="240" tileheight="512" tilecount="158" columns="0">
+ <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="152" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -468,33 +468,6 @@
     </object>
    </objectgroup>
   </tile>
-  <tile id="163">
-   <image width="17" height="17" source="images/enemies/BeachBall1.png"/>
-  </tile>
-  <tile id="164">
-   <image width="17" height="17" source="images/enemies/BeachBall2.png"/>
-  </tile>
-  <tile id="165">
-   <image width="17" height="17" source="images/enemies/BeachBall3.png"/>
-  </tile>
-  <tile id="166">
-   <image width="240" height="512" source="images/enemies/HenchmanBlack.png"/>
-  </tile>
-  <tile id="167">
-   <image width="240" height="480" source="images/enemies/HenchmanBlue.png"/>
-  </tile>
-  <tile id="168">
-   <image width="240" height="480" source="images/enemies/HenchmanRed.png"/>
-  </tile>
-  <tile id="169">
-   <image width="75" height="70" source="images/enemies/SeaGull1.png"/>
-  </tile>
-  <tile id="170">
-   <image width="75" height="70" source="images/enemies/SeaGull2.png"/>
-  </tile>
-  <tile id="171">
-   <image width="75" height="70" source="images/enemies/SeaGull3.png"/>
-  </tile>
   <tile id="172">
    <image width="55" height="85" source="images/items/Gem1.png"/>
   </tile>
@@ -504,6 +477,15 @@
   <tile id="174">
    <image width="55" height="85" source="images/items/Gem3.png"/>
   </tile>
+  <tile id="175">
+   <image width="128" height="128" source="images/items/CoinBronze2.png"/>
+  </tile>
+  <tile id="176">
+   <image width="128" height="128" source="images/items/CoinGold2.png"/>
+  </tile>
+  <tile id="177">
+   <image width="128" height="128" source="images/items/CoinSilver2.png"/>
+  </tile>
  </tileset>
  <layer id="1" name="Platforms" width="25" height="20">
   <data encoding="base64" compression="zlib">
@@ -512,7 +494,7 @@
  </layer>
  <layer id="2" name="Coins" width="25" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGATlg8UA7AAkAAGD0AKQ=
+   eJxjYBgFo2AUjIJRMApGATawAUpvhNKbBsohRAAAW/sCFA==
   </data>
  </layer>
  <layer id="3" name="Enemies" width="25" height="20">

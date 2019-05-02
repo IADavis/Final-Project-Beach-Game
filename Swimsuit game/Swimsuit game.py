@@ -2,7 +2,7 @@
 BEACH BUM BOB BOUNCES BONDI BEACH (or other title)
 
 SDEV 140 Spring 2019 - Final Project
-Version 1.0
+Version 0.1.17
 
 Authors:
 Andy Olson Moyano
@@ -11,7 +11,7 @@ Isaac Davis
 
 Credits:
 Tiles: created using tiled.com
-
+Sprites: created using www.piskelapp.com
 
 """
 import arcade
@@ -180,29 +180,107 @@ class MyGame(arcade.Window):
         self.coin_list = arcade.generate_sprites(my_map, coins_layer_name, TILE_SCALING)
 
         # -- Enemies
+        # Clear previous level enemies
         self.enemy_list = arcade.generate_sprites(my_map, enemies_layer_name, TILE_SCALING)
-               
-        # Draw an enemy on the ground
-        enemy = arcade.Sprite("images/enemies/wormGreen.png", SPRITE_SCALING)
 
-        enemy.bottom = SPRITE_SIZE
-        enemy.left = SPRITE_SIZE * 5
+        # Place enemies according to level
+        if self.level == 1:
+            # Draw an enemy on the ground
+            enemy = arcade.Sprite("images/enemies/HenchmanBlue.png", SPRITE_SCALING)
 
-        # Set enemy initial speed
-        enemy.change_x = 2
-        self.enemy_list.append(enemy)
+            enemy.bottom = SPRITE_SIZE
+            enemy.left = SPRITE_SIZE * 5
 
-        # -- Draw a enemy on the platform
-        enemy = arcade.Sprite("images/enemies/wormGreen.png", SPRITE_SCALING)
+            # Set enemy initial speed
+            enemy.change_x = 2
+            self.enemy_list.append(enemy)
 
-        enemy.bottom = SPRITE_SIZE * 5
-        enemy.left = SPRITE_SIZE * 11
+            # Draw a second enemy on the ground
+            enemy = arcade.Sprite("images/enemies/SeaGullWhite.png", SPRITE_SCALING)
 
-        # Set boundaries on the left/right the enemy can't cross
-        enemy.boundary_right = SPRITE_SIZE * 13
-        enemy.boundary_left = SPRITE_SIZE * 9
-        enemy.change_x = 2
-        self.enemy_list.append(enemy)
+            enemy.bottom = SPRITE_SIZE
+            enemy.left = SPRITE_SIZE * 8
+
+            # Set enemy initial speed
+            enemy.change_x = 2
+            self.enemy_list.append(enemy)
+            
+            # -- Draw a enemy on the platform
+            enemy = arcade.Sprite("images/enemies/BeachBallGreen.png", SPRITE_SCALING)
+
+            enemy.bottom = SPRITE_SIZE * 5
+            enemy.left = SPRITE_SIZE * 11
+
+            # Set boundaries on the left/right the enemy can't cross
+            enemy.boundary_right = SPRITE_SIZE * 13
+            enemy.boundary_left = SPRITE_SIZE * 9
+            enemy.change_x = 2
+            self.enemy_list.append(enemy)
+
+        elif self.level == 2:    
+            # Draw an enemy on the ground
+            enemy = arcade.Sprite("images/enemies/HenchmanRed.png", SPRITE_SCALING)
+
+            enemy.bottom = SPRITE_SIZE
+            enemy.left = SPRITE_SIZE * 5
+
+            # Set enemy initial speed
+            enemy.change_x = 2
+            self.enemy_list.append(enemy)
+
+            # Draw a second enemy on the ground
+            enemy = arcade.Sprite("images/enemies/SeaGullGreen.png", SPRITE_SCALING)
+
+            enemy.bottom = SPRITE_SIZE
+            enemy.left = SPRITE_SIZE * 8
+
+            # Set enemy initial speed
+            enemy.change_x = 2
+            self.enemy_list.append(enemy)
+            # -- Draw a enemy on the platform
+            enemy = arcade.Sprite("images/enemies/BeachBallRed.png", SPRITE_SCALING)
+
+            enemy.bottom = SPRITE_SIZE * 5
+            enemy.left = SPRITE_SIZE * 11
+
+            # Set boundaries on the left/right the enemy can't cross
+            enemy.boundary_right = SPRITE_SIZE * 13
+            enemy.boundary_left = SPRITE_SIZE * 9
+            enemy.change_x = 2
+            self.enemy_list.append(enemy)
+            
+        elif self.level == 3:
+            # Draw an enemy on the ground
+            enemy = arcade.Sprite("images/enemies/HenchmanBlack.png", SPRITE_SCALING)
+
+            enemy.bottom = SPRITE_SIZE
+            enemy.left = SPRITE_SIZE * 5
+
+            # Set enemy initial speed
+            enemy.change_x = 2
+            self.enemy_list.append(enemy)
+
+            # Draw a second enemy on the ground
+            enemy = arcade.Sprite("images/enemies/SeaGullBlack.png", SPRITE_SCALING)
+
+            enemy.bottom = SPRITE_SIZE
+            enemy.left = SPRITE_SIZE * 8
+
+            # Set enemy initial speed
+            enemy.change_x = 2
+            self.enemy_list.append(enemy)
+            
+            # -- Draw a enemy on the platform
+            enemy = arcade.Sprite("images/enemies/BeachBallMagenta.png", SPRITE_SCALING)
+
+            enemy.bottom = SPRITE_SIZE * 5
+            enemy.left = SPRITE_SIZE * 11
+
+            # Set boundaries on the left/right the enemy can't cross
+            enemy.boundary_right = SPRITE_SIZE * 13
+            enemy.boundary_left = SPRITE_SIZE * 9
+            enemy.change_x = 2
+            self.enemy_list.append(enemy)
        
         # --- Other stuff
         # Set the background color
