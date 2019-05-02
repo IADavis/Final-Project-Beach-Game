@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
- <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="154" columns="0">
+ <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="160" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -489,13 +489,41 @@
    <image width="128" height="128" source="images/items/coinSilver.png"/>
   </tile>
   <tile id="168">
-   <image width="128" height="128" source="images/items/CoinBronze2.png"/>
+   <image width="85" height="110" source="images/items/CoinBronze2.png"/>
   </tile>
   <tile id="169">
-   <image width="128" height="128" source="images/items/CoinGold2.png"/>
+   <image width="85" height="110" source="images/items/CoinGold2.png"/>
   </tile>
   <tile id="170">
-   <image width="128" height="128" source="images/items/CoinSilver2.png"/>
+   <image width="85" height="110" source="images/items/CoinSilver2.png"/>
+  </tile>
+  <tile id="171">
+   <image width="128" height="128" source="images/tiles/SandDownRamp2-1.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="-3">
+     <polygon points="0,0 1,130 129,132"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="172">
+   <image width="128" height="128" source="images/tiles/SandUpRamp2-1.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="-2" y="126">
+     <polygon points="0,0 131,1 128,-129"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="173">
+   <image width="128" height="128" source="images/tiles/SandDownRamp1-1.png"/>
+  </tile>
+  <tile id="174">
+   <image width="128" height="128" source="images/tiles/SandUpRamp1-1.png"/>
+  </tile>
+  <tile id="175">
+   <image width="128" height="128" source="images/tiles/Ground-1.png.png"/>
+  </tile>
+  <tile id="176">
+   <image width="128" height="128" source="images/tiles/Sand-1.png"/>
   </tile>
  </tileset>
  <layer id="3" name="Platforms" width="60" height="20">
