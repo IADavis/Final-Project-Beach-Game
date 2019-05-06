@@ -1,5 +1,5 @@
 """
-BEACH BUM BOB BOUNCES BONDI BEACH (or other title)
+BEACH BUM BOB BOUNCES BONDI BEACH
 
 SDEV 140 Spring 2019 - Final Project
 Version 0.1.14
