@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="66" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="9" nextobjectid="1">
  <tileset firstgid="1" source="my_new_tiles.tsx"/>
- <layer id="3" name="Platforms" width="60" height="20">
+ <layer id="6" name="Platforms" width="66" height="20">
   <data encoding="base64" compression="zlib">
-   eJztkzsKgDAMQIuD3kG9mFsncRFxcBL16qaUQsngYJN+og/e4CJ5JFUqjMZTOl9odEhqndH3AZ7glWCWnzSYnZt9156l3wG+66+wKru3PfUgEVnATdnukm8WU/objI3kN9+CHdinHoQICT0VUjq4l6o911t42+t6cmx6gmu/ucLROxLMxQV1r2nVJJPxgBunQDU4EPwnljfcBiXa
+   eJzlmFsKhDAMRYsfzv734YPucKYfYimNc1PzQi8ERGg0pze1NaVTUxVP1JSwGiU5rL/InfCUNYfCYL+ZQ0NaHHrzXQJhQHlD0zMefYHKslckOWi9d5tX4zmR/SClel1uddy/ywGdm7mKDzhGQui6rO0HipMFC863SYrDSA9rsuB+n6X9YL0fovZkFINMXEdYJ9taFsY4qt6NkafIm0OvFqQGxPccFp4cRueT0/soU2sOnD12r4aR8wnC1Lsv/qnUwD2fIHnafNE5WMmSQ2SGVhyi++mKA/UP4W3xBT92cJk=
   </data>
  </layer>
- <layer id="4" name="Coins" width="60" height="20">
+ <layer id="7" name="Coins" width="66" height="20">
   <data encoding="base64" compression="zlib">
-   eJztzrENACAMA7D+fwcgAU/SoSMzC7YUJWMiAAAAALiZ1T2zao/Mrt2eP/rTAddTA+4=
+   eJzt1EEKACAIRFHvf45qUZfsAkoRIxj8t3Ihk6BklmckZqMm9c6XOA+Ar4tyXv4A1dsAYi2oPT2oK6k6F5CN26+DXfxvinqAE+7ozgbCvQpn
   </data>
  </layer>
- <layer id="5" name="Enemies" width="60" height="20">
+ <layer id="8" name="Enemies" width="66" height="20">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20ND6AAAAAA4NcAEsAAAQ==
+   eJzt1bENACEMA0D2HwcooWOwn+ALRKSkuKsj211ag1g9ewAAFJb1J2dSL0AFp1gO8GZc3u+AzhWQwb8PAbgFzQ==
   </data>
  </layer>
 </map>

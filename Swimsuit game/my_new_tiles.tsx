@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.3" name="my_tiles" tilewidth="128" tileheight="128" tilecount="160" columns="0">
+<tileset version="1.2" tiledversion="1.2.3" name="my_tiles" tilewidth="128" tileheight="128" tilecount="188" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -563,5 +563,89 @@
  </tile>
  <tile id="176">
   <image width="128" height="128" source="images/tiles/Sand-1.png"/>
+ </tile>
+ <tile id="177">
+  <image width="65" height="60" source="images/enemies/BeachBallGreen.png"/>
+ </tile>
+ <tile id="178">
+  <image width="65" height="60" source="images/enemies/BeachBallMagenta.png"/>
+ </tile>
+ <tile id="179">
+  <image width="65" height="60" source="images/enemies/BeachBallRed.png"/>
+ </tile>
+ <tile id="180">
+  <image width="128" height="128" source="images/enemies/bee.png"/>
+ </tile>
+ <tile id="181">
+  <image width="128" height="128" source="images/enemies/fishGreen.png"/>
+ </tile>
+ <tile id="182">
+  <image width="128" height="128" source="images/enemies/fishPink.png"/>
+ </tile>
+ <tile id="183">
+  <image width="128" height="128" source="images/enemies/fly.png"/>
+ </tile>
+ <tile id="184">
+  <image width="128" height="128" source="images/enemies/frog.png"/>
+ </tile>
+ <tile id="185">
+  <image width="128" height="128" source="images/enemies/frog_move.png"/>
+ </tile>
+ <tile id="186">
+  <image width="64" height="128" source="images/enemies/HenchmanBlack.png"/>
+ </tile>
+ <tile id="187">
+  <image width="64" height="128" source="images/enemies/HenchmanBlue.png"/>
+ </tile>
+ <tile id="188">
+  <image width="64" height="128" source="images/enemies/HenchmanRed.png"/>
+ </tile>
+ <tile id="189">
+  <image width="128" height="128" source="images/enemies/ladybug.png"/>
+ </tile>
+ <tile id="190">
+  <image width="128" height="128" source="images/enemies/mouse.png"/>
+ </tile>
+ <tile id="191">
+  <image width="128" height="128" source="images/enemies/saw.png"/>
+ </tile>
+ <tile id="192">
+  <image width="128" height="128" source="images/enemies/sawHalf.png"/>
+ </tile>
+ <tile id="193">
+  <image width="75" height="70" source="images/enemies/SeaGullBlack.png"/>
+ </tile>
+ <tile id="194">
+  <image width="75" height="70" source="images/enemies/SeaGullGreen.png"/>
+ </tile>
+ <tile id="195">
+  <image width="75" height="70" source="images/enemies/SeaGullWhite.png"/>
+ </tile>
+ <tile id="196">
+  <image width="128" height="128" source="images/enemies/slimeBlock.png"/>
+ </tile>
+ <tile id="197">
+  <image width="128" height="128" source="images/enemies/slimeBlue.png"/>
+ </tile>
+ <tile id="198">
+  <image width="128" height="128" source="images/enemies/slimeBlue_move.png"/>
+ </tile>
+ <tile id="199">
+  <image width="128" height="128" source="images/enemies/slimeGreen.png"/>
+ </tile>
+ <tile id="200">
+  <image width="128" height="128" source="images/enemies/slimePurple.png"/>
+ </tile>
+ <tile id="201">
+  <image width="114" height="40" source="images/enemies/wormGreen.png"/>
+ </tile>
+ <tile id="202">
+  <image width="128" height="128" source="images/enemies/wormGreen_dead.png"/>
+ </tile>
+ <tile id="203">
+  <image width="128" height="128" source="images/enemies/wormGreen_move.png"/>
+ </tile>
+ <tile id="204">
+  <image width="128" height="128" source="images/enemies/wormPink.png"/>
  </tile>
 </tileset>

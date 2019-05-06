@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="34" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="10" nextobjectid="1">
- <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="160" columns="0">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="41" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="16" nextobjectid="1">
+ <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="169" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -565,20 +565,47 @@
   <tile id="176">
    <image width="128" height="128" source="images/tiles/Sand-1.png"/>
   </tile>
+  <tile id="177">
+   <image width="64" height="128" source="images/enemies/HenchmanBlack.png"/>
+  </tile>
+  <tile id="178">
+   <image width="64" height="128" source="images/enemies/HenchmanBlue.png"/>
+  </tile>
+  <tile id="179">
+   <image width="64" height="128" source="images/enemies/HenchmanRed.png"/>
+  </tile>
+  <tile id="180">
+   <image width="65" height="60" source="images/enemies/BeachBallGreen.png"/>
+  </tile>
+  <tile id="181">
+   <image width="65" height="60" source="images/enemies/BeachBallMagenta.png"/>
+  </tile>
+  <tile id="182">
+   <image width="65" height="60" source="images/enemies/BeachBallRed.png"/>
+  </tile>
+  <tile id="183">
+   <image width="75" height="70" source="images/enemies/SeaGullBlack.png"/>
+  </tile>
+  <tile id="184">
+   <image width="75" height="70" source="images/enemies/SeaGullGreen.png"/>
+  </tile>
+  <tile id="185">
+   <image width="75" height="70" source="images/enemies/SeaGullWhite.png"/>
+  </tile>
  </tileset>
- <layer id="7" name="Platforms" width="34" height="20">
+ <layer id="13" name="Platforms" width="41" height="20">
   <data encoding="base64" compression="zlib">
-   eJy1lGEKwzAIhddRNnaIHT/90W2Q3nAUIlgxUZOXBw+akOpXtcm3ce2AGBkQ4wmI0eLYlL3PBAaL41DWh7I/m8MrWbe9sj/K0ZpDqs+DuaduHo4ZfZCK9uVk+rI14p9tcaRKnlyMntkax2ieZB+5nEH8L1pcD//ayVGbhWjtUmEgJycHehZWxci+kKz7C8FBOXp79GK534LDM9tankiffsq73CfHvVgqwmcxZIdrHFEt7Jm+wctgcXhrsjCTIgzyjkY6wvAHNiVlvA==
+   eJzFleEKwyAMhNNVtqfY+/9pQd+wFOoI4SpRL+vBQS1IPi8Gs4hk5dflJ7WadRYu42dib5Wtz2Rk8Amo72UsYF3Af4YWs0Z8T9/HVo6zjDXXt/JI3q2Z8TBG9NaKmePJu/HQfmIy1n3s+RmZmcgZRoqcmTt5zpbU9+zMeHh6M0/KAur3vjPsvifgyLeQxdiaGTajJ/PK9ZWYHIuM9X4He1v+d693ULPXLEZ7p1h8LMZFmc1n3zWmZ5gOC2iIpA==
   </data>
  </layer>
- <layer id="8" name="Coins" width="34" height="20">
+ <layer id="14" name="Coins" width="41" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGwXABKwfaAQMAlg60A+gMlg20A+gAAKJRAfU=
+   eJxjYKAuWEVl84YbWIbGXzkgrhjZgN5pFD3OBztYPdAOGGJg6UA7gA5gCZXUUAsMljxFzbyCHn70DM+hBgY6z5FTb4/W9cSDgY7foQIGSzk4WAAAv34LvQ==
   </data>
  </layer>
- <layer id="9" name="Enemies" width="34" height="20">
+ <layer id="15" name="Enemies" width="41" height="20">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20ND6AAAODHAAqgAAE=
+   eJztzsEJACAMALHuP45YcTw/jiBci5cJEiH9Y9MBPZV04Fp0QFILgw6ovUkHijpP4wOK
   </data>
  </layer>
 </map>
