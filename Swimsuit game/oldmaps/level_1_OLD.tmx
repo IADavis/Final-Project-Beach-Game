@@ -3,17 +3,17 @@
  <tileset firstgid="1" source="my_new_tiles.tsx"/>
  <layer id="3" name="Platforms" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJztz8EJAEAIA0Ht1v4rOK4JRZyB/ScRAAAAALvl9IBG/2sd6wGz+Rhj
+   eJztkzsKgDAMQIuD3kG9mFsncRFxcBL16qaUQsngYJN+og/e4CJ5JFUqjMZTOl9odEhqndH3AZ7glWCWnzSYnZt9156l3wG+66+wKru3PfUgEVnATdnukm8WU/objI3kN9+CHdinHoQICT0VUjq4l6o911t42+t6cmx6gmu/ucLROxLMxQV1r2nVJJPxgBunQDU4EPwnljfcBiXa
   </data>
  </layer>
  <layer id="4" name="Coins" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJztzgENAAAIA6D3j2JKW9y5QQISAAAAANrmOvDIAtn4AKs=
+   eJztzrENACAMA7D+fwcgAU/SoSMzC7YUJWMiAAAAALiZ1T2zao/Mrt2eP/rTAddTA+4=
   </data>
  </layer>
  <layer id="5" name="Enemies" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt1LENACAMA0Gz/xoMGlHRQoUi7iawXHyyjQDc0w5g0YIzfuJ38/UAAFoqSNgAqQ==
+   eJztwTEBAAAAwqD1T20ND6AAAAAA4NcAEsAAAQ==
   </data>
  </layer>
 </map>
