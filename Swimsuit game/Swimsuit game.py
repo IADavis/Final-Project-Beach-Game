@@ -309,7 +309,6 @@ class MyGame(arcade.Window):
             elif key == arcade.key.RIGHT:
                 self.player_sprite.change_x = MOVEMENT_SPEED
 
-            self.PlayerTexture()
 
     def on_key_release(self, key, modifiers):
         """Called when the user releases a key. """
@@ -479,9 +478,7 @@ class MyGame(arcade.Window):
                                     self.view_bottom,
                                     SCREEN_HEIGHT + self.view_bottom)
 
-            # --- End Manage Scrolling ---
-
-            self.player_list.update()  
+            # --- End Manage Scrolling --- 
             
 def main():
     """ Main method """
