@@ -1,5 +1,5 @@
 """
-BEACH BUM BOB BOUNCES BONDI BEACH (or other title)
+BEACH BUM BOB BOUNCES BONDI BEACH
 
 SDEV 140 Spring 2019 - Final Project
 Version 0.1.14
@@ -40,7 +40,7 @@ GRID_PIXEL_SIZE = (SPRITE_PIXEL_SIZE * TILE_SCALING)
 SPRITE_SIZE = int(SPRITE_PIXEL_SIZE * SPRITE_SCALING)
 
 # Physics and movement
-MOVEMENT_SPEED = 5
+MOVEMENT_SPEED = 4
 GRAVITY = 0.55
 PLAYER_JUMP_SPEED = 20
 
@@ -480,6 +480,8 @@ class MyGame(arcade.Window):
                                     SCREEN_HEIGHT + self.view_bottom)
 
             # --- End Manage Scrolling ---
+
+            self.player_list.update()  
             
 def main():
     """ Main method """

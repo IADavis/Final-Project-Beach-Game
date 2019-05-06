@@ -539,16 +539,19 @@
  <tile id="171">
   <image width="128" height="128" source="images/tiles/SandDownRamp2-1.png"/>
   <objectgroup draworder="index">
-   <object id="3" x="0" y="128">
-    <polygon points="0,0 0,-128 128,0"/>
+   <object id="4" x="0" y="0">
+    <polygon points="0,0 0,128 128,128"/>
+   </object>
+   <object id="5" x="0" y="0">
+    <polygon points="0,0 0,128 128,128"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="172">
   <image width="128" height="128" source="images/tiles/SandUpRamp2-1.png"/>
   <objectgroup draworder="index">
-   <object id="3" x="128" y="128">
-    <polygon points="0,0 0,-128 -128,0"/>
+   <object id="4" x="128" y="0">
+    <polygon points="0,0 -128,128 0,128"/>
    </object>
   </objectgroup>
  </tile>
