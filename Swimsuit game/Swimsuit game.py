@@ -31,6 +31,7 @@ BACKGROUND_HEIGHT = 1080 * BACKGROUND_SCALE
 
 # Sprite scaling
 SPRITE_SCALING_PLAYER = 0.15
+SPRITE_SCALING_PLAYER_NEW = 0.6
 TILE_SCALING = 0.5
 COIN_SCALING = 0.5
 SPRITE_SCALING = 0.5
@@ -60,6 +61,10 @@ GAME_WINNER = 4
 # Player Start position
 PLAYER_START_X = 192
 PLAYER_START_Y = 94
+
+TEXTURE_LEFT = 0
+TEXTURE_RIGHT = 1
+TEXTURE_STILL = 2
 
 class MyGame(arcade.Window):
 
@@ -146,7 +151,7 @@ class MyGame(arcade.Window):
 
 
         # Setup player
-        self.player_sprite = arcade.Sprite("images/player_1/Swimsuit Guy.png", SPRITE_SCALING_PLAYER)
+        self.player_sprite = arcade.Sprite("images/player_1/Swimsuit Guy.png", SPRITE_SCALING_PLAYER_NEW)
         self.player_sprite.center_x = PLAYER_START_X
         self.player_sprite.center_y = PLAYER_START_Y
         self.player_list.append(self.player_sprite)
@@ -209,8 +214,6 @@ class MyGame(arcade.Window):
         page_texture = self.instructions[page_number]
         arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
                                       SCREEN_WIDTH, SCREEN_HEIGHT, page_texture, 0)
-    def SpawnEnemies(self):
-        pass
     
     def draw_game(self):
         """
@@ -296,6 +299,7 @@ class MyGame(arcade.Window):
         
         # Only move the user if the game is running.
         if self.current_state == GAME_RUNNING:
+            
             if key == arcade.key.UP:
                 if self.physics_engine.can_jump():
                     self.player_sprite.change_y = PLAYER_JUMP_SPEED
@@ -305,6 +309,8 @@ class MyGame(arcade.Window):
             elif key == arcade.key.RIGHT:
                 self.player_sprite.change_x = MOVEMENT_SPEED
 
+            self.PlayerTexture()
+
     def on_key_release(self, key, modifiers):
         """Called when the user releases a key. """
         
@@ -312,6 +318,7 @@ class MyGame(arcade.Window):
         if self.current_state == GAME_RUNNING:
             if key == arcade.key.LEFT or key == arcade.key.RIGHT:
                 self.player_sprite.change_x = 0
+
 
     def on_mouse_press(self, x, y, button, modifiers):
         """
@@ -323,14 +330,34 @@ class MyGame(arcade.Window):
             # Restart the game.
             self.setup()
             self.current_state = GAME_RUNNING
+
+
+    def PlayerTexture(self):
+##        super().__init__()
+
+        # Load a left facing texture and a right facing texture.
+        # mirrored=True will mirror the image we load.
+        texture = arcade.load_texture("images/player_1/StandingR.png", mirrored=True, scale=SPRITE_SCALING_PLAYER_NEW)
+        self.player_sprite.textures.append(texture)
+        texture = arcade.load_texture("images/player_1/StandingR.png", scale=SPRITE_SCALING_PLAYER_NEW)
+        self.player_sprite.textures.append(texture)
+        texture = arcade.load_texture("images/player_1/Swimsuit Guy.png", scale=SPRITE_SCALING_PLAYER_NEW)
+        self.player_sprite.textures.append(texture)
+
+        # Figure out if we should face left or right
+        if self.player_sprite.change_x < 0:
+             self.player_sprite.set_texture(1)
+        elif self.player_sprite.change_x > 0:
+             self.player_sprite.set_texture(2)
+        else:
+             self.player_sprite.set_texture(0)
             
     def update(self, delta_time):
         """ Movement and game logic """
         #print(str(self.player_sprite.center_x) + "," + str(self.player_sprite.center_y))
-
+        
         # Only move and do things if the game is running.
         if self.current_state == GAME_RUNNING:
-
             # Call update to move the sprite
             # If using a physics engine, call update on it instead of the sprite
             # list.        
@@ -339,7 +366,7 @@ class MyGame(arcade.Window):
             # --- Manage Player ---
             # Track if we need to change the viewport
             changed_viewport = False
-            
+            self.PlayerTexture()
             # Did the player fall off the map?
             if self.player_sprite.center_y < -1:
                 arcade.play_sound(self.gameover1_sound)
