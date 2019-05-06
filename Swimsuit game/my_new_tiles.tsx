@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.3" name="my_new_tiles" tilewidth="128" tileheight="128" tilecount="160" columns="0">
+<tileset version="1.2" tiledversion="1.2.3" name="my_tiles" tilewidth="128" tileheight="128" tilecount="160" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -151,8 +151,8 @@
  <tile id="48">
   <image width="128" height="128" source="images/tiles/grassHill_left.png"/>
   <objectgroup draworder="index">
-   <object id="1" x="0" y="128">
-    <polygon points="0,0 128,0 0,-128"/>
+   <object id="2" x="0" y="0">
+    <polygon points="0,0 0,128 128,128"/>
    </object>
   </objectgroup>
  </tile>
@@ -247,12 +247,17 @@
  </tile>
  <tile id="80">
   <image width="128" height="128" source="images/tiles/planetHill_left.png"/>
+  <objectgroup draworder="index">
+   <object id="1" x="0" y="128">
+    <polygon points="0,0 0,-128 128,0"/>
+   </object>
+  </objectgroup>
  </tile>
  <tile id="81">
   <image width="128" height="128" source="images/tiles/planetHill_right.png"/>
   <objectgroup draworder="index">
-   <object id="1" x="128" y="128">
-    <polyline points="0,0 0,-128 -128,0 0,0"/>
+   <object id="2" x="128" y="128">
+    <polygon points="0,0 0,-128 -128,0"/>
    </object>
   </objectgroup>
  </tile>
@@ -313,15 +318,15 @@
  <tile id="100">
   <image width="128" height="128" source="images/tiles/sandHill_left.png"/>
   <objectgroup draworder="index">
-   <object id="1" x="0" y="128">
-    <polyline points="0,0 128,0 0,-128 0,0"/>
+   <object id="3" x="0" y="128">
+    <polygon points="0,0 128,0 0,-128"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="101">
   <image width="128" height="128" source="images/tiles/sandHill_right.png"/>
   <objectgroup draworder="index">
-   <object id="1" x="128" y="128">
+   <object id="2" x="128" y="128">
     <polygon points="0,0 0,-128 -128,0"/>
    </object>
   </objectgroup>
@@ -389,16 +394,16 @@
  <tile id="122">
   <image width="128" height="128" source="images/tiles/snowHill_left.png"/>
   <objectgroup draworder="index">
-   <object id="2" x="0" y="128">
-    <polyline points="0,0 128,0 0,-128 0,0"/>
+   <object id="7" x="0" y="0">
+    <polygon points="0,0 128,128 0,128"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="123">
   <image width="128" height="128" source="images/tiles/snowHill_right.png"/>
   <objectgroup draworder="index">
-   <object id="1" x="128" y="128">
-    <polyline points="0,0 0,-128 -128,0 0,0"/>
+   <object id="2" x="0" y="128">
+    <polygon points="0,0 128,0 128,-128"/>
    </object>
   </objectgroup>
  </tile>
@@ -456,16 +461,16 @@
  <tile id="141">
   <image width="128" height="128" source="images/tiles/stoneHill_left.png"/>
   <objectgroup draworder="index">
-   <object id="1" x="0" y="128">
-    <polyline points="0,0 0,-128 128,0 0,0"/>
+   <object id="2" x="128" y="128">
+    <polygon points="0,0 -128,0 -128,-128"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="142">
   <image width="128" height="128" source="images/tiles/stoneHill_right.png"/>
   <objectgroup draworder="index">
-   <object id="1" x="128" y="128">
-    <polyline points="0,0 0,-128 -128,0 0,0"/>
+   <object id="2" x="128" y="128">
+    <polygon points="0,0 0,-128 -128,0"/>
    </object>
   </objectgroup>
  </tile>
@@ -534,16 +539,16 @@
  <tile id="171">
   <image width="128" height="128" source="images/tiles/SandDownRamp2-1.png"/>
   <objectgroup draworder="index">
-   <object id="2" x="0" y="128">
-    <polyline points="0,0 128,0 0,-128 0,0"/>
+   <object id="3" x="0" y="128">
+    <polygon points="0,0 0,-128 128,0"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="172">
   <image width="128" height="128" source="images/tiles/SandUpRamp2-1.png"/>
   <objectgroup draworder="index">
-   <object id="2" x="128" y="128">
-    <polyline points="0,0 0,-128 -128,0 0,0"/>
+   <object id="3" x="128" y="128">
+    <polygon points="0,0 0,-128 -128,0"/>
    </object>
   </objectgroup>
  </tile>

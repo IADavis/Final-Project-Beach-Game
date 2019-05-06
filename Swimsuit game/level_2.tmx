@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="4" nextobjectid="1">
- <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="158" columns="0">
+ <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="160" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -86,6 +86,11 @@
   </tile>
   <tile id="24">
    <image width="128" height="128" source="images/tiles/dirtHill_right.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="126" y="-4">
+     <polygon points="0,0 -124,130 -1,133"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="25">
    <image width="128" height="128" source="images/tiles/dirtLeft.png"/>
@@ -146,6 +151,11 @@
   </tile>
   <tile id="48">
    <image width="128" height="128" source="images/tiles/grassHill_left.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="0">
+     <polygon points="0,0 0,128 128,128"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="49">
    <image width="128" height="128" source="images/tiles/grassHill_right.png"/>
@@ -238,9 +248,19 @@
   </tile>
   <tile id="80">
    <image width="128" height="128" source="images/tiles/planetHill_left.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="128">
+     <polygon points="0,0 0,-128 128,0"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="81">
    <image width="128" height="128" source="images/tiles/planetHill_right.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="128" y="128">
+     <polygon points="0,0 0,-128 -128,0"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="82">
    <image width="128" height="128" source="images/tiles/planetLeft.png"/>
@@ -298,9 +318,19 @@
   </tile>
   <tile id="100">
    <image width="128" height="128" source="images/tiles/sandHill_left.png"/>
+   <objectgroup draworder="index">
+    <object id="3" x="0" y="128">
+     <polygon points="0,0 128,0 0,-128"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="101">
    <image width="128" height="128" source="images/tiles/sandHill_right.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="128" y="128">
+     <polygon points="0,0 0,-128 -128,0"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="102">
    <image width="128" height="128" source="images/tiles/sandLeft.png"/>
@@ -365,13 +395,18 @@
   <tile id="122">
    <image width="128" height="128" source="images/tiles/snowHill_left.png"/>
    <objectgroup draworder="index">
-    <object id="1" x="0.5" y="0.5">
-     <polygon points="0,0 0,126.875 127,127.125"/>
+    <object id="7" x="0" y="0">
+     <polygon points="0,0 128,128 0,128"/>
     </object>
    </objectgroup>
   </tile>
   <tile id="123">
    <image width="128" height="128" source="images/tiles/snowHill_right.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="128">
+     <polygon points="0,0 128,0 128,-128"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="124">
    <image width="128" height="128" source="images/tiles/snowLeft.png"/>
@@ -426,9 +461,19 @@
   </tile>
   <tile id="141">
    <image width="128" height="128" source="images/tiles/stoneHill_left.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="128" y="128">
+     <polygon points="0,0 -128,0 -128,-128"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="142">
    <image width="128" height="128" source="images/tiles/stoneHill_right.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="128" y="128">
+     <polygon points="0,0 0,-128 -128,0"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="143">
    <image width="128" height="128" source="images/tiles/stoneLeft.png"/>
@@ -468,56 +513,67 @@
     </object>
    </objectgroup>
   </tile>
-  <tile id="172">
+  <tile id="163">
    <image width="55" height="85" source="images/items/Gem1.png"/>
   </tile>
-  <tile id="173">
+  <tile id="164">
    <image width="55" height="85" source="images/items/Gem2.png"/>
   </tile>
-  <tile id="174">
+  <tile id="165">
    <image width="55" height="85" source="images/items/Gem3.png"/>
   </tile>
-  <tile id="175">
+  <tile id="166">
+   <image width="128" height="128" source="images/items/coinBronze.png"/>
+  </tile>
+  <tile id="167">
+   <image width="128" height="128" source="images/items/coinSilver.png"/>
+  </tile>
+  <tile id="168">
    <image width="85" height="110" source="images/items/CoinBronze2.png"/>
   </tile>
-  <tile id="176">
+  <tile id="169">
    <image width="85" height="110" source="images/items/CoinGold2.png"/>
   </tile>
-  <tile id="177">
+  <tile id="170">
    <image width="85" height="110" source="images/items/CoinSilver2.png"/>
   </tile>
-  <tile id="178">
+  <tile id="171">
    <image width="128" height="128" source="images/tiles/SandDownRamp2-1.png"/>
    <objectgroup draworder="index">
-    <object id="1" x="1.09375" y="-1">
-     <polygon points="0,0 -0.09375,127 131.906,128"/>
+    <object id="3" x="0" y="128">
+     <polygon points="0,0 0,-128 128,0"/>
     </object>
    </objectgroup>
   </tile>
-  <tile id="179">
+  <tile id="172">
    <image width="128" height="128" source="images/tiles/SandUpRamp2-1.png"/>
+   <objectgroup draworder="index">
+    <object id="3" x="128" y="128">
+     <polygon points="0,0 0,-128 -128,0"/>
+    </object>
+   </objectgroup>
   </tile>
-  <tile id="180">
+  <tile id="173">
    <image width="128" height="128" source="images/tiles/SandDownRamp1-1.png"/>
   </tile>
-  <tile id="181">
+  <tile id="174">
    <image width="128" height="128" source="images/tiles/SandUpRamp1-1.png"/>
   </tile>
-  <tile id="182">
+  <tile id="175">
    <image width="128" height="128" source="images/tiles/Ground-1.png.png"/>
   </tile>
-  <tile id="183">
+  <tile id="176">
    <image width="128" height="128" source="images/tiles/Sand-1.png"/>
   </tile>
  </tileset>
  <layer id="1" name="Platforms" width="25" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYKAMsCNhWgBamUst83PR+LVAXAfE9RSaOxgByG8gf7EhYXL8ix5mtAYgN1bT2I58IC5lgIQFpfE/FNIQteNQCoilgVhmgM0YaoCa4UaqOVuAmIkCe4kxfxsN7YCZv51GdiCbD8I7aICRzQdhANGPJK0=
+   eJzNkzEKgDAMRYuDbrqrVxQnJ1FPJLY3NEGEEkpjGyN+eINU8pJUjZGl8gjFvVCfi1WuH3MM5HkBVmDL6EUyxxcOnA3nKj1C83IOurOcpMyBPc7KjhGYzLWLlPsPOSTf0FOHNPQOpY4W6IA+8g7neFKDy9//QQ3HvTd/dzXQkHO6V3QUgh657MoOrH8oOvz6iFPAEk4Xpi4r
   </data>
  </layer>
  <layer id="2" name="Coins" width="25" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGATawAUpvhNKbBsohRAAAW/sCFA==
+   eJxjYBgFo2AUjIJRMNjB0oF2wCgAg2UD7QA8AADOOwFM
   </data>
  </layer>
  <layer id="3" name="Enemies" width="25" height="20">
