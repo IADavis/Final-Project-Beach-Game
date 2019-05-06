@@ -30,7 +30,7 @@ BACKGROUND_WIDTH = 1920 * BACKGROUND_SCALE
 BACKGROUND_HEIGHT = 1080 * BACKGROUND_SCALE
 
 # Sprite scaling
-SPRITE_SCALING_PLAYER = 0.15
+SPRITE_SCALING_PLAYER = 0.07
 TILE_SCALING = 0.5
 COIN_SCALING = 0.5
 SPRITE_SCALING = 0.5
@@ -39,9 +39,9 @@ GRID_PIXEL_SIZE = (SPRITE_PIXEL_SIZE * TILE_SCALING)
 SPRITE_SIZE = int(SPRITE_PIXEL_SIZE * SPRITE_SCALING)
 
 # Physics and movement
-MOVEMENT_SPEED = 5
+MOVEMENT_SPEED = 4
 GRAVITY = 0.55
-PLAYER_JUMP_SPEED = 15
+PLAYER_JUMP_SPEED = 13
 
 # How many pixels to keep as a minimum margin between the character
 # and the edge of the screen.
@@ -60,6 +60,35 @@ GAME_WINNER = 4
 # Player Start position
 PLAYER_START_X = 192
 PLAYER_START_Y = 94
+
+TEXTURE_LEFT = 0
+TEXTURE_RIGHT = 1
+
+class Player(arcade.Sprite):
+
+    def __init__(self):
+        super().__init__()
+
+        # Load a left facing texture and a right facing texture.
+        # mirrored=True will mirror the image we load.
+        texture = arcade.load_texture("images/player_1/Standing.png", mirrored=True, scale=SPRITE_SCALING_PLAYER)
+        self.textures.append(texture)
+        texture = arcade.load_texture("images/player_1/Standing.png", scale=SPRITE_SCALING_PLAYER)
+        self.textures.append(texture)
+
+        # By default, face right.
+        self.set_texture(TEXTURE_RIGHT)
+
+    def update(self):
+        self.center_x += self.change_x
+        self.center_y += self.change_y
+
+        # Figure out if we should face left or right
+        if self.change_x < 0:
+            self.set_texture(TEXTURE_LEFT)
+        if self.change_x > 0:
+            self.set_texture(TEXTURE_RIGHT)
+
 
 class MyGame(arcade.Window):
 
@@ -146,7 +175,7 @@ class MyGame(arcade.Window):
 
 
         # Setup player
-        self.player_sprite = arcade.Sprite("images/player_1/Swimsuit Guy.png", SPRITE_SCALING_PLAYER)
+        self.player_sprite = Player()
         self.player_sprite.center_x = PLAYER_START_X
         self.player_sprite.center_y = PLAYER_START_Y
         self.player_list.append(self.player_sprite)
@@ -533,6 +562,8 @@ class MyGame(arcade.Window):
                                     SCREEN_HEIGHT + self.view_bottom)
 
             # --- End Manage Scrolling ---
+
+            self.player_list.update()  
             
 def main():
     """ Main method """

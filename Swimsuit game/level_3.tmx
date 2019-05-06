@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="34" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="10" nextobjectid="1">
  <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="160" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
@@ -566,19 +566,19 @@
    <image width="128" height="128" source="images/tiles/Sand-1.png"/>
   </tile>
  </tileset>
- <layer id="1" name="Platforms" width="25" height="20" locked="1">
+ <layer id="7" name="Platforms" width="34" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYKAMsCNhWgBamUst83PR+LVAXAfE9RSaOxgByG8gf7EhYXL8ix5mtAYgN1bT2I58IC5lgIQFpfE/FNIQteMwHYgzgDhzgM0YaoCa4UaqOWlAzESBvcSYn0AlOxjxmK9KBTsYkTA280E4gwYY2XwQBgDeJhwO
+   eJy1lGEKwzAIhddRNnaIHT/90W2Q3nAUIlgxUZOXBw+akOpXtcm3ce2AGBkQ4wmI0eLYlL3PBAaL41DWh7I/m8MrWbe9sj/K0ZpDqs+DuaduHo4ZfZCK9uVk+rI14p9tcaRKnlyMntkax2ieZB+5nEH8L1pcD//ayVGbhWjtUmEgJycHehZWxci+kKz7C8FBOXp79GK534LDM9tankiffsq73CfHvVgqwmcxZIdrHFEt7Jm+wctgcXhrsjCTIgzyjkY6wvAHNiVlvA==
   </data>
  </layer>
- <layer id="2" name="Coins" width="25" height="20">
+ <layer id="8" name="Coins" width="34" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMJzAyoF2AAlg6UA7gEiwbKAdQAQAAJT6AfU=
+   eJxjYBgFo2AUjIJRMApGwXABKwfaAQMAlg60A+gMlg20A+gAAKJRAfU=
   </data>
  </layer>
- <layer id="3" name="Enemies" width="25" height="20">
+ <layer id="9" name="Enemies" width="34" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+   eJztwTEBAAAAwqD1T20ND6AAAODHAAqgAAE=
   </data>
  </layer>
 </map>
