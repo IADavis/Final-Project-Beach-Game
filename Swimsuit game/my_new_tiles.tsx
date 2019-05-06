@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.3" name="my_tiles" tilewidth="128" tileheight="128" tilecount="160" columns="0">
+<tileset version="1.2" tiledversion="2019.04.25" name="my_tiles" tilewidth="128" tileheight="128" tilecount="169" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="128" height="128" source="images/tiles/boxCrate.png"/>
@@ -539,16 +539,19 @@
  <tile id="171">
   <image width="128" height="128" source="images/tiles/SandDownRamp2-1.png"/>
   <objectgroup draworder="index">
-   <object id="3" x="0" y="128">
-    <polygon points="0,0 0,-128 128,0"/>
+   <object id="4" x="0" y="0">
+    <polygon points="0,0 0,128 128,128"/>
+   </object>
+   <object id="5" x="0" y="0">
+    <polygon points="0,0 0,128 128,128"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="172">
   <image width="128" height="128" source="images/tiles/SandUpRamp2-1.png"/>
   <objectgroup draworder="index">
-   <object id="3" x="128" y="128">
-    <polygon points="0,0 0,-128 -128,0"/>
+   <object id="4" x="128" y="0">
+    <polygon points="0,0 -128,128 0,128"/>
    </object>
   </objectgroup>
  </tile>
@@ -563,5 +566,32 @@
  </tile>
  <tile id="176">
   <image width="128" height="128" source="images/tiles/Sand-1.png"/>
+ </tile>
+ <tile id="177">
+  <image width="65" height="60" source="images/enemies/BeachBallGreen.png"/>
+ </tile>
+ <tile id="178">
+  <image width="65" height="60" source="images/enemies/BeachBallMagenta.png"/>
+ </tile>
+ <tile id="179">
+  <image width="65" height="60" source="images/enemies/BeachBallRed.png"/>
+ </tile>
+ <tile id="180">
+  <image width="64" height="128" source="images/enemies/HenchmanBlack.png"/>
+ </tile>
+ <tile id="181">
+  <image width="64" height="128" source="images/enemies/HenchmanBlue.png"/>
+ </tile>
+ <tile id="182">
+  <image width="64" height="128" source="images/enemies/HenchmanRed.png"/>
+ </tile>
+ <tile id="183">
+  <image width="75" height="70" source="images/enemies/SeaGullBlack.png"/>
+ </tile>
+ <tile id="184">
+  <image width="75" height="70" source="images/enemies/SeaGullGreen.png"/>
+ </tile>
+ <tile id="185">
+  <image width="75" height="70" source="images/enemies/SeaGullWhite.png"/>
  </tile>
 </tileset>
