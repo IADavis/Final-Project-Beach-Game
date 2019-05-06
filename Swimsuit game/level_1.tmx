@@ -13,7 +13,7 @@
  </layer>
  <layer id="5" name="Enemies" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt1T0KACAMg9Hc/zj+gZ7OVXA0UKjf25tkqwTcSvQAAMCXov5PC+oFgNMy5XRTDpBdfbyflhXSMOVktwG/UQWq
+   eJzt1T0KADAIg1Hvf5z+DT2da6FTIRCo35slcREjgFtzLwAAKMn1f4apFwBOW5QzRTnA7/rjvOJGlyCjqgTamQWr
   </data>
  </layer>
 </map>
