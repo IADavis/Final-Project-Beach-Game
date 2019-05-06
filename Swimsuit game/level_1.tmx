@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="my_new_tiles.tsx"/>
  <layer id="3" name="Platforms" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMA6DFXf8Ey3GuYAIAAADAJX12sSUYYQ==
+   eJztz8EJAEAIA0Ht1v4rOK4JRZyB/ScRAAAAALvl9IBG/2sd6wGz+Rhj
   </data>
  </layer>
  <layer id="4" name="Coins" width="60" height="20">
@@ -13,7 +13,7 @@
  </layer>
  <layer id="5" name="Enemies" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJztzgENAAAIA6D3z2FQW9y5QQISAACAjrkOAPDSAhP8AKU=
+   eJzt1LENACAMA0Gz/xoMGlHRQoUi7iawXHyyjQDc0w5g0YIzfuJ38/UAAFoqSNgAqQ==
   </data>
  </layer>
 </map>

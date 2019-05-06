@@ -186,105 +186,10 @@ class MyGame(arcade.Window):
         # Clear previous level enemies
         self.enemy_list = arcade.generate_sprites(my_map, enemies_layer_name, TILE_SCALING)
 
-        # Place enemies according to level
-        if self.level == 1:
-            # Draw an enemy on the ground
-            enemy = arcade.Sprite("images/enemies/HenchmanBlue.png", SPRITE_SCALING)
-
-            enemy.bottom = SPRITE_SIZE
-            enemy.left = SPRITE_SIZE * 5
-
-            # Set enemy initial speed
-            enemy.change_x = 2
-            self.enemy_list.append(enemy)
-
-            # Draw a second enemy on the ground
-            enemy = arcade.Sprite("images/enemies/SeaGullWhite.png", SPRITE_SCALING)
-
-            enemy.bottom = SPRITE_SIZE
-            enemy.left = SPRITE_SIZE * 8
-
-            # Set enemy initial speed
-            enemy.change_x = 2
-            self.enemy_list.append(enemy)
+        for i in self.enemy_list:
+            #This sets every single enemy's movement to 2
+            i.change_x = 2
             
-            # -- Draw a enemy on the platform
-            enemy = arcade.Sprite("images/enemies/BeachBallGreen.png", SPRITE_SCALING)
-
-            enemy.bottom = SPRITE_SIZE * 5
-            enemy.left = SPRITE_SIZE * 11
-
-            # Set boundaries on the left/right the enemy can't cross
-            enemy.boundary_right = SPRITE_SIZE * 13
-            enemy.boundary_left = SPRITE_SIZE * 9
-            enemy.change_x = 2
-            self.enemy_list.append(enemy)
-
-        elif self.level == 2:    
-            # Draw an enemy on the ground
-            enemy = arcade.Sprite("images/enemies/HenchmanRed.png", SPRITE_SCALING)
-
-            enemy.bottom = SPRITE_SIZE
-            enemy.left = SPRITE_SIZE * 5
-
-            # Set enemy initial speed
-            enemy.change_x = 2
-            self.enemy_list.append(enemy)
-
-            # Draw a second enemy on the ground
-            enemy = arcade.Sprite("images/enemies/SeaGullGreen.png", SPRITE_SCALING)
-
-            enemy.bottom = SPRITE_SIZE
-            enemy.left = SPRITE_SIZE * 8
-
-            # Set enemy initial speed
-            enemy.change_x = 2
-            self.enemy_list.append(enemy)
-            # -- Draw a enemy on the platform
-            enemy = arcade.Sprite("images/enemies/BeachBallRed.png", SPRITE_SCALING)
-
-            enemy.bottom = SPRITE_SIZE * 5
-            enemy.left = SPRITE_SIZE * 11
-
-            # Set boundaries on the left/right the enemy can't cross
-            enemy.boundary_right = SPRITE_SIZE * 13
-            enemy.boundary_left = SPRITE_SIZE * 9
-            enemy.change_x = 2
-            self.enemy_list.append(enemy)
-            
-        elif self.level == 3:
-            # Draw an enemy on the ground
-            enemy = arcade.Sprite("images/enemies/HenchmanBlack.png", SPRITE_SCALING)
-
-            enemy.bottom = SPRITE_SIZE
-            enemy.left = SPRITE_SIZE * 5
-
-            # Set enemy initial speed
-            enemy.change_x = 2
-            self.enemy_list.append(enemy)
-
-            # Draw a second enemy on the ground
-            enemy = arcade.Sprite("images/enemies/SeaGullBlack.png", SPRITE_SCALING)
-
-            enemy.bottom = SPRITE_SIZE
-            enemy.left = SPRITE_SIZE * 8
-
-            # Set enemy initial speed
-            enemy.change_x = 2
-            self.enemy_list.append(enemy)
-            
-            # -- Draw a enemy on the platform
-            enemy = arcade.Sprite("images/enemies/BeachBallMagenta.png", SPRITE_SCALING)
-
-            enemy.bottom = SPRITE_SIZE * 5
-            enemy.left = SPRITE_SIZE * 11
-
-            # Set boundaries on the left/right the enemy can't cross
-            enemy.boundary_right = SPRITE_SIZE * 13
-            enemy.boundary_left = SPRITE_SIZE * 9
-            enemy.change_x = 2
-            self.enemy_list.append(enemy)
-       
         # --- Other stuff
         # Set the background color
         if my_map.backgroundcolor:
@@ -476,18 +381,31 @@ class MyGame(arcade.Window):
             # --- Manage Enemies ---            
             # Move the enemies
             self.enemy_list.update()
-
-            # Check each enemy
+            #Enemy AI
             for enemy in self.enemy_list:
-                # If the enemy hit a wall, reverse
-                if len(arcade.check_for_collision_with_list(enemy, self.wall_list)) > 0:
+                #Gravity
+                self.wallCollide = arcade.check_for_collision_with_list(enemy,self.wall_list)
+##                print(str(len(self.wallCollide)))#Remove this line after debug
+                if len(self.wallCollide) < 1:
                     enemy.change_x *= -1
-                # If the enemy hit the left boundary, reverse
-                elif enemy.boundary_left is not None and enemy.left < enemy.boundary_left:
+                    enemy.change_y = -GRAVITY*10
+                else:
+                    enemy.change_y = 0
+
+                #Stand on floor
+                if len(self.wallCollide) < 3 and len(self.wallCollide) >= 1:
+                    for wall in self.wallCollide:
+                        topBound = wall.top
+                        myBottomBound = enemy.bottom
+                        if topBound > myBottomBound:
+                            enemy.bottom = topBound-1
+                            
+                #Change direction when hit wall
+                if len(self.wallCollide) >= 3:
                     enemy.change_x *= -1
-                # If the enemy hit the right boundary, reverse
-                elif enemy.boundary_right is not None and enemy.right > enemy.boundary_right:
-                    enemy.change_x *= -1
+                    
+            #Use this print to figure out where to put enemies by using the player's coords
+            #print(str(self.player_sprite.center_x) + "," + str(self.player_sprite.center_y))
 
             # See if the player hit an enemy If so, game over.
             if len(arcade.check_for_collision_with_list(self.player_sprite, self.enemy_list)) > 0:
