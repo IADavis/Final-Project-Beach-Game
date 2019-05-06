@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="34" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="10" nextobjectid="1">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="41" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="16" nextobjectid="1">
  <tileset firstgid="1" name="my_tiles" tilewidth="128" tileheight="128" tilecount="169" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
@@ -593,19 +593,19 @@
    <image width="75" height="70" source="images/enemies/SeaGullWhite.png"/>
   </tile>
  </tileset>
- <layer id="7" name="Platforms" width="34" height="20" locked="1">
+ <layer id="13" name="Platforms" width="41" height="20">
   <data encoding="base64" compression="zlib">
-   eJzN1dEKgCAMBdApUvQR/f9Lgv5hCEUjVuq8loP7UBAdNluBiOyRPysAHPMADoQh54jCdRTuI8rSGOej1XH2Z2LR9K3E0WMOGgevZNoGcIQj6DP75Oj5bdQ4WqvE78AOTe8cS6qSfYqekROC+L+M6Mj1bmHvXhsckXRz8sKzPF/MxdO1d96CcpgGA8phWDSG+45GpsawAz0yUYs=
+   eJzFleEKwyAMhNNVtqfY+/9pQd+wFOoI4SpRL+vBQS1IPi8Gs4hk5dflJ7WadRYu42dib5Wtz2Rk8Amo72UsYF3Af4YWs0Z8T9/HVo6zjDXXt/JI3q2Z8TBG9NaKmePJu/HQfmIy1n3s+RmZmcgZRoqcmTt5zpbU9+zMeHh6M0/KAur3vjPsvifgyLeQxdiaGTajJ/PK9ZWYHIuM9X4He1v+d693ULPXLEZ7p1h8LMZFmc1n3zWmZ5gOC2iIpA==
   </data>
  </layer>
- <layer id="8" name="Coins" width="34" height="20" locked="1">
+ <layer id="14" name="Coins" width="41" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYKAcrKKCGUMBLEPjrxwQVwwPQIs0gx4/gwGsHmgHDBBYOtAOoBJYQiU1pAB6pmNqpk/0cKB2uAxGQI90Tk49MxLrpuFS5hALBmN9R20AADWrC70=
+   eJxjYKAuWEVl84YbWIbGXzkgrhjZgN5pFD3OBztYPdAOGGJg6UA7gA5gCZXUUAsMljxFzbyCHn70DM+hBgY6z5FTb4/W9cSDgY7foQIGSzk4WAAAv34LvQ==
   </data>
  </layer>
- <layer id="9" name="Enemies" width="34" height="20">
+ <layer id="15" name="Enemies" width="41" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4C+YMdAO2AEg610tGsbHe0aBaNgFOAHmwbaAaOAKmDLQDuAjgAAoR8Dig==
+   eJztzsEJACAMALHuP45YcTw/jiBci5cJEiH9Y9MBPZV04Fp0QFILgw6ovUkHijpP4wOK
   </data>
  </layer>
 </map>

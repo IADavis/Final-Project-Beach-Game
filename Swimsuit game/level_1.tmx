@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="66" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="9" nextobjectid="1">
  <tileset firstgid="1" source="my_new_tiles.tsx"/>
- <layer id="3" name="Platforms" width="60" height="20">
+ <layer id="6" name="Platforms" width="66" height="20">
   <data encoding="base64" compression="zlib">
-   eJzdl2EKwzAIhUN+dPe/R9vRG66BFYrE8Z6JTvpAKIVaPzWJqaWU+rUnqv6wUW2nHR37p7x4G+t70IeHRnl79WuGsGq19uwBz35GFdnjFl6v+KRfj/9kqO8s3fdHqes9yovmernZiw/ZLHR/nFVfLR8RzMxZwPJa1pgnM3vuWesbPTdos4vGeijPkfuVjHklvtO4dsJPUxRvL2YkVqRfGeYIXmt9mLWJ5s6Ll5kte7Fa5m8kd1nmjRYrO38jfqS/LLxR8uDNnKvZvNn7QzJq99mn2gcm7Gxz
+   eJzlmFsKhDAMRYsfzv734YPucKYfYimNc1PzQi8ERGg0pze1NaVTUxVP1JSwGiU5rL/InfCUNYfCYL+ZQ0NaHHrzXQJhQHlD0zMefYHKslckOWi9d5tX4zmR/SClel1uddy/ywGdm7mKDzhGQui6rO0HipMFC863SYrDSA9rsuB+n6X9YL0fovZkFINMXEdYJ9taFsY4qt6NkafIm0OvFqQGxPccFp4cRueT0/soU2sOnD12r4aR8wnC1Lsv/qnUwD2fIHnafNE5WMmSQ2SGVhyi++mKA/UP4W3xBT92cJk=
   </data>
  </layer>
- <layer id="4" name="Coins" width="60" height="20" locked="1">
+ <layer id="7" name="Coins" width="66" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt07sNACAIRVH2n0MtdEkX0ALzAkbvqSgIJHzMtJq4HuKpdzjE9YDXVGf+yY96ewA/KZt4pW7iDNn9AS9uNh4zv08X5eA/3IXZBIjvCmc=
+   eJzt1EEKACAIRFHvf45qUZfsAkoRIxj8t3Ihk6BklmckZqMm9c6XOA+Ar4tyXv4A1dsAYi2oPT2oK6k6F5CN26+DXfxvinqAE+7ozgbCvQpn
   </data>
  </layer>
- <layer id="5" name="Enemies" width="60" height="20">
+ <layer id="8" name="Enemies" width="66" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt1T0KADAIg1Hvf5z+DT2da6FTIRCo35slcREjgFtzLwAAKMn1f4apFwBOW5QzRTnA7/rjvOJGlyCjqgTamQWr
+   eJzt1bENACEMA0D2HwcooWOwn+ALRKSkuKsj211ag1g9ewAAFJb1J2dSL0AFp1gO8GZc3u+AzhWQwb8PAbgFzQ==
   </data>
  </layer>
 </map>
