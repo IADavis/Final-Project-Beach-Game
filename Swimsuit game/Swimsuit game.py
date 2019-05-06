@@ -39,14 +39,14 @@ GRID_PIXEL_SIZE = (SPRITE_PIXEL_SIZE * TILE_SCALING)
 SPRITE_SIZE = int(SPRITE_PIXEL_SIZE * SPRITE_SCALING)
 
 # Physics and movement
-MOVEMENT_SPEED = 4
+MOVEMENT_SPEED = 5
 GRAVITY = 0.55
-PLAYER_JUMP_SPEED = 13
+PLAYER_JUMP_SPEED = 20
 
 # How many pixels to keep as a minimum margin between the character
 # and the edge of the screen.
-LEFT_VIEWPORT_MARGIN = 150
-RIGHT_VIEWPORT_MARGIN = 150
+LEFT_VIEWPORT_MARGIN = 300
+RIGHT_VIEWPORT_MARGIN = 300
 BOTTOM_VIEWPORT_MARGIN = 100
 TOP_VIEWPORT_MARGIN = 100
 
@@ -483,7 +483,7 @@ class MyGame(arcade.Window):
 
             # --- End Manage Scrolling ---
 
-            self.player_list.update()  
+#            self.player_list.update()  
             
 def main():
     """ Main method """
