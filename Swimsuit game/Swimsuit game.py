@@ -304,7 +304,9 @@ class MyGame(arcade.Window):
         page_texture = self.instructions[page_number]
         arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
                                       SCREEN_WIDTH, SCREEN_HEIGHT, page_texture, 0)
-
+    def SpawnEnemies(self):
+        pass
+    
     def draw_game(self):
         """
         Draw background, all the sprites, along with the score.
