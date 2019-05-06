@@ -157,8 +157,8 @@ class MyGame(arcade.Window):
       
     def load_level(self, level):
         # Read in the tiled map lebel
-        my_map = arcade.read_tiled_map(f"level_{level}.tmx", TILE_SCALING)
-        
+        my_map = arcade.read_tiled_map(f"level_{level}.tmx", TILE_SCALING)  
+
         # Name of the layer in the file that has our platforms/walls
         platforms_layer_name = 'Platforms'
         
@@ -419,6 +419,7 @@ class MyGame(arcade.Window):
             
     def update(self, delta_time):
         """ Movement and game logic """
+        #print(str(self.player_sprite.center_x) + "," + str(self.player_sprite.center_y))
 
         # Only move and do things if the game is running.
         if self.current_state == GAME_RUNNING:
