@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
  <tileset firstgid="1" source="my_new_tiles.tsx"/>
  <layer id="3" name="Platforms" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJztz8EJAEAIA0Ht1v4rOK4JRZyB/ScRAAAAALvl9IBG/2sd6wGz+Rhj
+   eJzdl2EKwzAIhUN+dPe/R9vRG66BFYrE8Z6JTvpAKIVaPzWJqaWU+rUnqv6wUW2nHR37p7x4G+t70IeHRnl79WuGsGq19uwBz35GFdnjFl6v+KRfj/9kqO8s3fdHqes9yovmernZiw/ZLHR/nFVfLR8RzMxZwPJa1pgnM3vuWesbPTdos4vGeijPkfuVjHklvtO4dsJPUxRvL2YkVqRfGeYIXmt9mLWJ5s6Ll5kte7Fa5m8kd1nmjRYrO38jfqS/LLxR8uDNnKvZvNn7QzJq99mn2gcm7Gxz
   </data>
  </layer>
- <layer id="4" name="Coins" width="60" height="20">
+ <layer id="4" name="Coins" width="60" height="20" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztzgENAAAIA6D3j2JKW9y5QQISAAAAANrmOvDIAtn4AKs=
+   eJzt07sNACAIRVH2n0MtdEkX0ALzAkbvqSgIJHzMtJq4HuKpdzjE9YDXVGf+yY96ewA/KZt4pW7iDNn9AS9uNh4zv08X5eA/3IXZBIjvCmc=
   </data>
  </layer>
  <layer id="5" name="Enemies" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt1LENACAMA0Gz/xoMGlHRQoUi7iawXHyyjQDc0w5g0YIzfuJ38/UAAFoqSNgAqQ==
+   eJzt1T0KADAIg1Hvf5z+DT2da6FTIRCo35slcREjgFtzLwAAKMn1f4apFwBOW5QzRTnA7/rjvOJGlyCjqgTamQWr
   </data>
  </layer>
 </map>
